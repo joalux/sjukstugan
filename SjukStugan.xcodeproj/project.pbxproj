@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4101D36822280D6D003A4820 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D36722280D6D003A4820 /* profileViewController.swift */; };
+		4101D36A22297903003A4820 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D36922297903003A4820 /* ProgressBarView.swift */; };
+		4101D36C222D348D003A4820 /* DiagnosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D36B222D348D003A4820 /* DiagnosViewController.swift */; };
 		410E21232227F14400CB2EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21222227F14400CB2EFF /* AppDelegate.swift */; };
 		410E21252227F14400CB2EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21242227F14400CB2EFF /* ViewController.swift */; };
 		410E21282227F14400CB2EFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E21262227F14400CB2EFF /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4101D36722280D6D003A4820 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		4101D36922297903003A4820 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressBarView.swift; path = "../../../../Downloads/ios-tutorials-master/CustomProgressBar/progressBar/ProgressBarView.swift"; sourceTree = "<group>"; };
+		4101D36B222D348D003A4820 /* DiagnosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosViewController.swift; sourceTree = "<group>"; };
 		410E211F2227F14400CB2EFF /* SjukStugan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SjukStugan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		410E21222227F14400CB2EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		410E21242227F14400CB2EFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +85,10 @@
 			children = (
 				410E21222227F14400CB2EFF /* AppDelegate.swift */,
 				410E21242227F14400CB2EFF /* ViewController.swift */,
+				4101D36722280D6D003A4820 /* profileViewController.swift */,
 				410E21262227F14400CB2EFF /* Main.storyboard */,
+				4101D36B222D348D003A4820 /* DiagnosViewController.swift */,
+				4101D36922297903003A4820 /* ProgressBarView.swift */,
 				410E21292227F14500CB2EFF /* Assets.xcassets */,
 				410E212B2227F14500CB2EFF /* LaunchScreen.storyboard */,
 				410E212E2227F14500CB2EFF /* Info.plist */,
@@ -198,7 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				410E21252227F14400CB2EFF /* ViewController.swift in Sources */,
+				4101D36A22297903003A4820 /* ProgressBarView.swift in Sources */,
 				410E21232227F14400CB2EFF /* AppDelegate.swift in Sources */,
+				4101D36C222D348D003A4820 /* DiagnosViewController.swift in Sources */,
+				4101D36822280D6D003A4820 /* profileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
