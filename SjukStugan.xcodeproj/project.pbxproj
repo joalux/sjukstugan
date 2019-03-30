@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4101D36822280D6D003A4820 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D36722280D6D003A4820 /* profileViewController.swift */; };
-		4101D36A22297903003A4820 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D36922297903003A4820 /* ProgressBarView.swift */; };
-		4101D36C222D348D003A4820 /* DiagnosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101D36B222D348D003A4820 /* DiagnosViewController.swift */; };
 		410E21232227F14400CB2EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21222227F14400CB2EFF /* AppDelegate.swift */; };
 		410E21252227F14400CB2EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21242227F14400CB2EFF /* ViewController.swift */; };
 		410E21282227F14400CB2EFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E21262227F14400CB2EFF /* Main.storyboard */; };
 		410E212A2227F14500CB2EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 410E21292227F14500CB2EFF /* Assets.xcassets */; };
 		410E212D2227F14500CB2EFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E212B2227F14500CB2EFF /* LaunchScreen.storyboard */; };
 		410E21382227F14600CB2EFF /* SjukStuganTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21372227F14600CB2EFF /* SjukStuganTests.swift */; };
+		41CBA262224B845500246F59 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CBA261224B845500246F59 /* NumberViewController.swift */; };
+		41CBA2D4224E366500246F59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CBA2D3224E366400246F59 /* GoogleService-Info.plist */; };
+		8D49C856BDB6CC72425AF848 /* Pods_SjukStugan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455A63FC156C71E418791BE /* Pods_SjukStugan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CC66C9BBFDC8DF26E3846EE /* Pods-SjukStugan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SjukStugan.debug.xcconfig"; path = "Target Support Files/Pods-SjukStugan/Pods-SjukStugan.debug.xcconfig"; sourceTree = "<group>"; };
+		3AB2840239492B56A4658BD2 /* Pods-SjukStugan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SjukStugan.release.xcconfig"; path = "Target Support Files/Pods-SjukStugan/Pods-SjukStugan.release.xcconfig"; sourceTree = "<group>"; };
 		4101D36722280D6D003A4820 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
-		4101D36922297903003A4820 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressBarView.swift; path = "../../../../Downloads/ios-tutorials-master/CustomProgressBar/progressBar/ProgressBarView.swift"; sourceTree = "<group>"; };
-		4101D36B222D348D003A4820 /* DiagnosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosViewController.swift; sourceTree = "<group>"; };
 		410E211F2227F14400CB2EFF /* SjukStugan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SjukStugan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		410E21222227F14400CB2EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		410E21242227F14400CB2EFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +43,9 @@
 		410E21332227F14500CB2EFF /* SjukStuganTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjukStuganTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		410E21372227F14600CB2EFF /* SjukStuganTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SjukStuganTests.swift; sourceTree = "<group>"; };
 		410E21392227F14600CB2EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41CBA261224B845500246F59 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		41CBA2D3224E366400246F59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C455A63FC156C71E418791BE /* Pods_SjukStugan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SjukStugan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D49C856BDB6CC72425AF848 /* Pods_SjukStugan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 				410E21212227F14400CB2EFF /* SjukStugan */,
 				410E21362227F14600CB2EFF /* SjukStuganTests */,
 				410E21202227F14400CB2EFF /* Products */,
+				8F62545CB068F14F1553BE17 /* Pods */,
+				E8A97EF696B9C207F694B518 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,10 +92,10 @@
 			children = (
 				410E21222227F14400CB2EFF /* AppDelegate.swift */,
 				410E21242227F14400CB2EFF /* ViewController.swift */,
+				41CBA2D3224E366400246F59 /* GoogleService-Info.plist */,
 				4101D36722280D6D003A4820 /* profileViewController.swift */,
 				410E21262227F14400CB2EFF /* Main.storyboard */,
-				4101D36B222D348D003A4820 /* DiagnosViewController.swift */,
-				4101D36922297903003A4820 /* ProgressBarView.swift */,
+				41CBA261224B845500246F59 /* NumberViewController.swift */,
 				410E21292227F14500CB2EFF /* Assets.xcassets */,
 				410E212B2227F14500CB2EFF /* LaunchScreen.storyboard */,
 				410E212E2227F14500CB2EFF /* Info.plist */,
@@ -105,6 +112,23 @@
 			path = SjukStuganTests;
 			sourceTree = "<group>";
 		};
+		8F62545CB068F14F1553BE17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CC66C9BBFDC8DF26E3846EE /* Pods-SjukStugan.debug.xcconfig */,
+				3AB2840239492B56A4658BD2 /* Pods-SjukStugan.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8A97EF696B9C207F694B518 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C455A63FC156C71E418791BE /* Pods_SjukStugan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 410E213C2227F14600CB2EFF /* Build configuration list for PBXNativeTarget "SjukStugan" */;
 			buildPhases = (
+				91DB6A98C0A5247158F9076D /* [CP] Check Pods Manifest.lock */,
 				410E211B2227F14400CB2EFF /* Sources */,
 				410E211C2227F14400CB2EFF /* Frameworks */,
 				410E211D2227F14400CB2EFF /* Resources */,
+				319510A474D021F6EFDD12C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				410E212D2227F14500CB2EFF /* LaunchScreen.storyboard in Resources */,
+				41CBA2D4224E366500246F59 /* GoogleService-Info.plist in Resources */,
 				410E212A2227F14500CB2EFF /* Assets.xcassets in Resources */,
 				410E21282227F14400CB2EFF /* Main.storyboard in Resources */,
 			);
@@ -201,15 +228,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		319510A474D021F6EFDD12C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SjukStugan/Pods-SjukStugan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SjukStugan/Pods-SjukStugan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91DB6A98C0A5247158F9076D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SjukStugan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		410E211B2227F14400CB2EFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				410E21252227F14400CB2EFF /* ViewController.swift in Sources */,
-				4101D36A22297903003A4820 /* ProgressBarView.swift in Sources */,
+				41CBA262224B845500246F59 /* NumberViewController.swift in Sources */,
 				410E21232227F14400CB2EFF /* AppDelegate.swift in Sources */,
-				4101D36C222D348D003A4820 /* DiagnosViewController.swift in Sources */,
 				4101D36822280D6D003A4820 /* profileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,9 +457,11 @@
 		};
 		410E213D2227F14600CB2EFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC66C9BBFDC8DF26E3846EE /* Pods-SjukStugan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H3K73A2WX3;
 				INFOPLIST_FILE = SjukStugan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,9 +476,11 @@
 		};
 		410E213E2227F14600CB2EFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AB2840239492B56A4658BD2 /* Pods-SjukStugan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H3K73A2WX3;
 				INFOPLIST_FILE = SjukStugan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

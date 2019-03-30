@@ -10,43 +10,43 @@ import UIKit
 
 class profileViewController: UIViewController {
 
-    @IBOutlet weak var behandlingar: UILabel!
+
     @IBOutlet weak var diagnosLabel: UILabel!
-    @IBOutlet weak var progressBar: ProgressBarView!
-    @IBOutlet weak var progressPercentage: UILabel!
+   
+    @IBOutlet weak var progressCounter: UILabel!
     @IBOutlet weak var divider: UILabel!
     @IBOutlet weak var bokningar: UIStackView!
     @IBOutlet var newTreatment: [UILabel]!
     
-    var treatments: [UILabel] = []
+    var treatments: [String] = ["","","","","",""]
     var timer: Timer!
-    var progressCounter:Float = 0
-    var progressIncrement:Float = 0.1
+    var countTreatments = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newTreatment[0].text = "sdasdasd"
-        newTreatment[1].text = ""
-        newTreatment[2].text = ""
-        newTreatment[3].text = ""
+        progressCounter.text = "\(countTreatments)"
+        
+        newTreatment[0].text = treatments[0]
+        newTreatment[1].text = treatments[1]
+        newTreatment[2].text = treatments[2]
+        newTreatment[3].text = treatments[3]
+        newTreatment[4].text = treatments[4]
+        newTreatment[5].text = treatments[5]
+
+        
         view.bringSubviewToFront(divider)
         view.bringSubviewToFront(diagnosLabel)
-        view.bringSubviewToFront(behandlingar)
-        view.bringSubviewToFront(bokningar)
-        diagnosLabel.text = "Kommande behandlingar"
-        print("Testing ")
-        print(newTreatment[0].text!)
         
        
-        showProgress()
-       
-
-
+        
+        view.bringSubviewToFront(bokningar)
+        //diagnosLabel.text = "Kommande behandlingar"
+        print(newTreatment[0].text!)
 
    }
-    @objc func showProgress(){
+   /* @objc func showProgress(){
         let formatted = String(format: "%.0f", progressCounter * 100)
-        progressBar.progress = progressCounter
         progressPercentage.text = "\(formatted)%"
     }
     func addProgress(progress: Int){
@@ -56,19 +56,21 @@ class profileViewController: UIViewController {
         
 
         
+    }*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTreatments" {
+            if let destination = segue.destination as? NumberViewController {
+                destination.treatments = treatments
+                print(treatments)
+                destination.treatCount = countTreatments
+                print("Going to treatments count: \(countTreatments)")
+            }
+            
+        }
     }
-    
     
 }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 
