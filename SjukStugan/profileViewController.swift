@@ -7,41 +7,70 @@
 //
 
 import UIKit
+import Firebase
 
 class profileViewController: UIViewController {
+    
+    var db: Firestore!
+
 
 
     @IBOutlet weak var diagnosLabel: UILabel!
    
     @IBOutlet weak var progressCounter: UILabel!
     @IBOutlet weak var divider: UILabel!
-    @IBOutlet weak var bokningar: UIStackView!
     @IBOutlet var newTreatment: [UILabel]!
+    @IBOutlet var bokningar: [UIStackView]!
     
-    var treatments: [String] = ["","","","","",""]
+    var treatments: [String] = []
     var timer: Timer!
     var countTreatments = 0
+    var i = 0
     
-    
+    var datab = Firestore.firestore()
+
     override func viewDidLoad() {
-        super.viewDidLoad()
+        progressCounter.text = ""
+        
+        
+        print("treatments Arrayen from start \(treatments)")
+        /*datab.collection("treatments").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("document ID: \(document.documentID)")
+                    print("\(document.documentID) => \(document.data())")
+                    self.treatments.append(document.documentID)
+                    
+                    print("treatments arrayen i for loopen \(self.treatments)")
+                    print("treatments arrayens längd \(self.treatments.count)")
+                    self.progressCounter.text = "\(self.treatments.count)"
+
+                    self.newTreatment[self.i].text = self.treatments[self.i]
+                   
+                }
+            }
+        }*/
+        
+        print("treatments arrayen utanför for loopen \(treatments)")
+        print("treatments arrayens längd utanför for loopen \(treatments.count)")
+        
+        
+        
+        countTreatments = treatments.count
         progressCounter.text = "\(countTreatments)"
         
-        newTreatment[0].text = treatments[0]
-        newTreatment[1].text = treatments[1]
-        newTreatment[2].text = treatments[2]
-        newTreatment[3].text = treatments[3]
-        newTreatment[4].text = treatments[4]
-        newTreatment[5].text = treatments[5]
-
+        for i in 0...5 {
+            bokningar[i].
+        }
+        
+        super.viewDidLoad()
         
         view.bringSubviewToFront(divider)
         view.bringSubviewToFront(diagnosLabel)
         
-       
         
-        view.bringSubviewToFront(bokningar)
-        //diagnosLabel.text = "Kommande behandlingar"
         print(newTreatment[0].text!)
 
    }
@@ -57,6 +86,22 @@ class profileViewController: UIViewController {
 
         
     }*/
+    
+   /* private func getAll(){
+        db.collection("treatments").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    
+                }
+            }
+        }
+    }*/
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTreatments" {
             if let destination = segue.destination as? NumberViewController {

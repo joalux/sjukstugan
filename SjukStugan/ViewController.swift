@@ -7,14 +7,50 @@
 //
 
 import UIKit
+import Firebase
+
+var datab = Firestore.firestore()
 
 class ViewController: UIViewController {
+    
+    
 
    
     @IBOutlet weak var loginButton: UIButton!
+    
+     var treatments: [String] = []
+    
     override func viewDidLoad() {
+        
+        datab.collection("treatments").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("document ID: \(document.documentID)")
+                    print("\(document.documentID) => \(document.data())")
+                    self.treatments.append(document.documentID)
+                    
+                    print("treatments arrayen i for loopen \(self.treatments)")
+                    print("treatments arrayens längd \(self.treatments.count)")
+                   
+                    
+                }
+            }
+        }
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMain" {
+            if let destination = segue.destination as? profileViewController {
+                destination.treatments = treatments
+            }
+            print(treatments)
+            print("Going to start totTreatments: \(treatments.count)")
+        }
     }
 
 

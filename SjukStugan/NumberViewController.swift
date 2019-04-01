@@ -12,14 +12,13 @@ import Firebase
 class NumberViewController: UITableViewController {
     
     var db: Firestore!
-    
-    
-    
-    var treatments: [String] = ["","","","","",""]
+    var treatments: [String] = []
     var i = 0
     var treatCount = 0
+    var loadFirstTime = false
     
     
+    @IBOutlet var treatmentsTableView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var newTreatment: UITextField!
     @IBOutlet var popOver: UIView!
@@ -28,20 +27,23 @@ class NumberViewController: UITableViewController {
         popOver.center = self.view.center
     }
     @IBAction func doneButton(_ sender: UIButton) {
-        
-        
-        self.popOver.removeFromSuperview()
-        
-        if i < 6 {
-            treatments.insert(newTreatment.text!, at: i)
-            db.collection("treatments").addDocument(data: ["treatment" :  newTreatment.text!])
 
+        self.popOver.removeFromSuperview()
+        /*if i < 6 {
+            db.collection("treatments").document(newTreatment.text!).setData(["name": newTreatment.text!,]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
+            
             i = i + 1
         }
-        else{
+        else{*/
             db.collection("treatments").addDocument(data: ["treatment" :  newTreatment.text!])
             treatments.append(newTreatment.text!)
-        }
+        
         treatCount = 1 + treatCount
         
         print(treatments)
@@ -52,12 +54,33 @@ class NumberViewController: UITableViewController {
     
     
     
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         db = Firestore.firestore()
-        print(treatments)
+        print("treatments Arrayen from start \(treatments)")
+        /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                if self.loadFirstTime == true{
+                    for document in querySnapshot!.documents {
+                        print("document ID: \(document.documentID)")
+                        print("\(document.documentID) => \(document.data())")
+                        self.treatments.append(document.documentID)
+                        print("treatments arrayen \(self.treatments)")
+                    }
+                    self.treatmentsTableView.reloadData()
+                     self.loadFirstTime = false
+                }
+            }
+        }*/
         
-        
+
+        print("treatments arrayen \(treatments)")
+        super.viewDidLoad()
         
         self.popOver.layer.cornerRadius = 10
         self.popOver.backgroundColor = UIColor.lightGray
@@ -147,6 +170,7 @@ class NumberViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToStart" {
+            
             if let destination = segue.destination as? profileViewController {
                 destination.countTreatments = treatCount
                 destination.treatments = treatments
