@@ -131,8 +131,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Avklarade behandlingar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZS-KU-zki">
-                                        <rect key="frame" x="37" y="47" width="179.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antal behandlingar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZS-KU-zki">
+                                        <rect key="frame" x="57" y="29" width="154" height="65"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -140,10 +140,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Yeu-iW-duj" firstAttribute="top" secondItem="uZS-KU-zki" secondAttribute="bottom" constant="22.5" id="IP5-Zf-uWZ"/>
-                                    <constraint firstItem="uZS-KU-zki" firstAttribute="top" secondItem="uO8-19-gAq" secondAttribute="top" constant="47" id="RNM-0k-N5P"/>
-                                    <constraint firstItem="uZS-KU-zki" firstAttribute="centerX" secondItem="Yeu-iW-duj" secondAttribute="centerX" id="XpX-t3-zXC"/>
-                                    <constraint firstItem="uZS-KU-zki" firstAttribute="centerX" secondItem="uO8-19-gAq" secondAttribute="centerX" id="x8o-N9-mbW"/>
+                                    <constraint firstItem="Yeu-iW-duj" firstAttribute="top" secondItem="uZS-KU-zki" secondAttribute="bottom" constant="-4" id="FLB-4K-Hcm"/>
+                                    <constraint firstItem="uZS-KU-zki" firstAttribute="top" secondItem="uO8-19-gAq" secondAttribute="top" constant="29" id="RNM-0k-N5P"/>
+                                    <constraint firstItem="Yeu-iW-duj" firstAttribute="top" secondItem="uO8-19-gAq" secondAttribute="top" constant="90" id="Vq5-au-gAQ"/>
+                                    <constraint firstItem="Yeu-iW-duj" firstAttribute="leading" secondItem="uZS-KU-zki" secondAttribute="leading" id="dn7-b9-xbO"/>
+                                    <constraint firstItem="Yeu-iW-duj" firstAttribute="centerX" secondItem="uO8-19-gAq" secondAttribute="centerX" id="lAV-Kv-wb2"/>
+                                    <constraint firstItem="uZS-KU-zki" firstAttribute="centerX" secondItem="uO8-19-gAq" secondAttribute="centerX" constant="14" id="x8o-N9-mbW"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Gas-wW-J5g">
@@ -250,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRb-uH-Izb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="166"/>
+            <point key="canvasLocation" x="1032.8" y="165.06746626686657"/>
         </scene>
         <!--Behandlingar-->
         <scene sceneID="W4h-J9-IZG">

@@ -60,9 +60,11 @@ class profileViewController: UIViewController {
         
         countTreatments = treatments.count
         progressCounter.text = "\(countTreatments)"
-        
+        var lastIn = treatments.count
+        lastIn = lastIn - 1
         for i in 0...5 {
-            bokningar[i].
+            newTreatment[i].text = treatments[lastIn]
+            lastIn = lastIn - 1
         }
         
         super.viewDidLoad()
