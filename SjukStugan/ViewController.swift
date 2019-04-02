@@ -9,11 +9,11 @@
 import UIKit
 import Firebase
 
-var datab = Firestore.firestore()
 
 class ViewController: UIViewController {
     
     
+    var datab : Firestore!
 
    
     @IBOutlet weak var loginButton: UIButton!
@@ -21,6 +21,8 @@ class ViewController: UIViewController {
      var treatments: [String] = []
     
     override func viewDidLoad() {
+        
+        datab = Firestore.firestore()
         
         datab.collection("treatments").getDocuments() { (querySnapshot, err) in
             if let err = err {

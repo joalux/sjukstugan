@@ -27,14 +27,25 @@ class profileViewController: UIViewController {
     var countTreatments = 0
     var i = 0
     
-    var datab = Firestore.firestore()
 
     override func viewDidLoad() {
         progressCounter.text = ""
         
         
         print("treatments Arrayen from start \(treatments)")
-        /*datab.collection("treatments").getDocuments() { (querySnapshot, err) in
+        
+        /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }*/
+        
+        
+        /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -62,6 +73,7 @@ class profileViewController: UIViewController {
         progressCounter.text = "\(countTreatments)"
         var lastIn = treatments.count
         lastIn = lastIn - 1
+        print("Sistsa objektet i treatments \(treatments[treatments.count - 1])")
         for i in 0...5 {
             newTreatment[i].text = treatments[lastIn]
             lastIn = lastIn - 1

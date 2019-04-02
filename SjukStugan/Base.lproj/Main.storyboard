@@ -18,13 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sjukstugan" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-J6-gDk">
-                                <rect key="frame" x="34" y="114" width="307" height="333"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1N-ga-Snm">
-                                <rect key="frame" x="59" y="43" width="256" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1N-ga-Snm">
+                                <rect key="frame" x="67.5" y="65" width="240" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="ep6-3D-9XM"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Sjukstugan">
                                         <attributes>
@@ -37,25 +35,45 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuL-jS-bHm">
-                                <rect key="frame" x="34" y="496" width="307" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuL-jS-bHm">
+                                <rect key="frame" x="34" y="526" width="307" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="NoS-a3-46N"/>
+                                </constraints>
                                 <state key="normal" image="enterButton">
                                     <color key="titleColor" red="1" green="0.185714831" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="v8r-2p-hJg" kind="show" identifier="toMain" id="LJQ-vz-8XZ"/>
+                                    <segue destination="v8r-2p-hJg" kind="show" identifier="toMain" id="9Wb-4I-Xwf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gå in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixh-O5-9NY">
-                                <rect key="frame" x="135" y="505" width="104" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gå in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixh-O5-9NY">
+                                <rect key="frame" x="135" y="537" width="104" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.185714831" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjukstugan" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-J6-gDk">
+                                <rect key="frame" x="34" y="148" width="307" height="333"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="333" id="924-4Q-ocg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RuL-jS-bHm" firstAttribute="top" secondItem="UMG-J6-gDk" secondAttribute="bottom" constant="45" id="0bW-Ew-IUV"/>
+                            <constraint firstItem="Ixh-O5-9NY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="0gP-mF-OQY"/>
+                            <constraint firstItem="UMG-J6-gDk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="3tS-at-yEg"/>
+                            <constraint firstItem="UMG-J6-gDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4zg-IC-kaE"/>
+                            <constraint firstItem="UMG-J6-gDk" firstAttribute="top" secondItem="D1N-ga-Snm" secondAttribute="bottom" constant="27" id="AEc-ua-jSG"/>
+                            <constraint firstItem="Ixh-O5-9NY" firstAttribute="top" secondItem="UMG-J6-gDk" secondAttribute="bottom" constant="56" id="UWt-WO-tAq"/>
+                            <constraint firstItem="D1N-ga-Snm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="VPJ-qN-Kg4"/>
+                            <constraint firstItem="UMG-J6-gDk" firstAttribute="trailing" secondItem="RuL-jS-bHm" secondAttribute="trailing" id="gzz-no-ioC"/>
+                            <constraint firstItem="UMG-J6-gDk" firstAttribute="centerX" secondItem="Ixh-O5-9NY" secondAttribute="centerX" id="nm5-BX-ysw"/>
+                            <constraint firstItem="D1N-ga-Snm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67.5" id="p42-Px-FbI"/>
+                            <constraint firstItem="UMG-J6-gDk" firstAttribute="leading" secondItem="RuL-jS-bHm" secondAttribute="leading" id="rGx-Ft-Jzb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -66,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Start-->
         <scene sceneID="8KD-hN-Txv">
             <objects>
                 <viewController id="v8r-2p-hJg" customClass="profileViewController" customModule="SjukStugan" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,6 +255,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6T9-5B-fIP"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Start" id="0wH-2A-war">
+                        <barButtonItem key="leftBarButtonItem" title="⟪ Gå ut" id="R17-xa-bTi">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="O6P-1z-MBD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="diagnosLabel" destination="gRm-d5-bUl" id="OAQ-Xr-P4j"/>
                         <outlet property="divider" destination="LnF-rS-nAi" id="Pbn-b2-t6f"/>
@@ -252,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRb-uH-Izb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.8" y="165.06746626686657"/>
+            <point key="canvasLocation" x="1972" y="165.06746626686657"/>
         </scene>
         <!--Behandlingar-->
         <scene sceneID="W4h-J9-IZG">
@@ -269,7 +294,7 @@
                                 <navigationItem title="Behandlingar" id="0Mg-g9-QDw">
                                     <barButtonItem key="leftBarButtonItem" title="❮Start" id="KRb-CS-SE2" userLabel="❮tillbaka">
                                         <connections>
-                                            <segue destination="v8r-2p-hJg" kind="show" identifier="backToStart" id="wkz-EU-l5C"/>
+                                            <segue destination="C6v-D8-7D3" kind="show" identifier="backToStart" id="wkz-EU-l5C"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="mBA-6L-jGM">
@@ -346,7 +371,7 @@
                     <viewLayoutGuide key="safeArea" id="XBJ-YN-7mc"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1774" y="153"/>
+            <point key="canvasLocation" x="2712.8000000000002" y="152.47376311844079"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eAG-Ax-Dej">
@@ -362,7 +387,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2W8-qQ-yUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="885"/>
+            <point key="canvasLocation" x="2788" y="884.70764617691157"/>
         </scene>
         <!--Diagnos View Controller-->
         <scene sceneID="PUr-4x-rQP">
@@ -508,7 +533,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5E-En-lWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="1112"/>
+            <point key="canvasLocation" x="3816.8000000000002" y="1111.3943028485758"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GDF-N5-4kk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C6v-D8-7D3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7kI-hj-trn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v8r-2p-hJg" kind="relationship" relationship="rootViewController" id="0fF-B8-cFq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bp-7M-rjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032.8" y="165.06746626686657"/>
         </scene>
     </scenes>
     <resources>
@@ -517,6 +560,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d4R-Bo-QHl"/>
-        <segue reference="wkz-EU-l5C"/>
+        <segue reference="9Wb-4I-Xwf"/>
     </inferredMetricsTieBreakers>
 </document>
