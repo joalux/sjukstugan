@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        
         datab = Firestore.firestore()
         
         datab.collection("treatments").getDocuments() { (querySnapshot, err) in
@@ -40,6 +41,8 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+       
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

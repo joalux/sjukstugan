@@ -16,10 +16,11 @@ class NumberViewController: UITableViewController {
     var i = 0
     var treatCount = 0
     var loadFirstTime = false
+    let unwrapped: String = ""
     
     
     @IBOutlet var treatmentsTableView: UITableView!
-    @IBOutlet weak var navBar: UINavigationItem!
+    //@IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var newTreatment: UITextField!
     @IBOutlet var popOver: UIView!
     @IBAction func openPopButton(_ sender: UIBarButtonItem) {
@@ -27,35 +28,28 @@ class NumberViewController: UITableViewController {
         popOver.center = self.view.center
     }
     @IBAction func doneButton(_ sender: UIButton) {
-
-        self.popOver.removeFromSuperview()
-        /*if i < 6 {
-            db.collection("treatments").document(newTreatment.text!).setData(["name": newTreatment.text!,]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-                }
-            }
-            
-            i = i + 1
+        print(newTreatment.text)
+        let test = newTreatment.text
+        if let unwrapped = test{
+            print("unwrappade \(unwrapped)")
         }
-        else{*/
-            db.collection("treatments").addDocument(data: ["treatment" :  newTreatment.text!])
-            treatments.append(newTreatment.text!)
+        /*
+        
+        self.popOver.removeFromSuperview()
+       
+         let data: [String: Any] = [:]
+        
+        db.collection("treatments").document(unwrapped).setData(data)
+        
+        treatments.append(unwrapped)
         
         treatCount = 1 + treatCount
         
         print(treatments)
         newTreatment.text = ""
-        self.tableView.reloadData()
+        self.tableView.reloadData()*/
     }
-    
-    
-    
-    
-    
-    
+ 
     override func viewDidLoad() {
         
         db = Firestore.firestore()
@@ -118,7 +112,30 @@ class NumberViewController: UITableViewController {
         
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted entry \(indexPath)")
+            print("Deleted entry \(indexPath.row)")
+            print("Deleted entry \(treatments[indexPath.row])")
+            db.collection("treatments").document("\(treatments[indexPath.row])").delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            
+            treatments.remove(at: indexPath.row)
+            
+            print("efter delete \(treatments)")
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
     
     
     

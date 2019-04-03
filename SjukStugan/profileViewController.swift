@@ -31,19 +31,7 @@ class profileViewController: UIViewController {
     override func viewDidLoad() {
         progressCounter.text = ""
         
-        
-        print("treatments Arrayen from start \(treatments)")
-        
-        /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
-            }
-        }*/
-        
+        db = Firestore.firestore()
         
         /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -57,26 +45,26 @@ class profileViewController: UIViewController {
                     print("treatments arrayen i for loopen \(self.treatments)")
                     print("treatments arrayens längd \(self.treatments.count)")
                     self.progressCounter.text = "\(self.treatments.count)"
-
-                    self.newTreatment[self.i].text = self.treatments[self.i]
-                   
-                }
+                    if(self.i < 5){
+                        self.newTreatment[self.i].text = document.documentID
+                        self.i = self.i + 1
+                    }
+                                    }
             }
         }*/
         
         print("treatments arrayen utanför for loopen \(treatments)")
         print("treatments arrayens längd utanför for loopen \(treatments.count)")
         
-        
-        
         countTreatments = treatments.count
         progressCounter.text = "\(countTreatments)"
-        var lastIn = treatments.count
-        lastIn = lastIn - 1
-        print("Sistsa objektet i treatments \(treatments[treatments.count - 1])")
-        for i in 0...5 {
-            newTreatment[i].text = treatments[lastIn]
-            lastIn = lastIn - 1
+       countTreatments = countTreatments - 1
+        print("Sistsa objektet i treatments \(treatments.count)")
+        for i in 0...treatments.count{
+            if i < 5{
+                newTreatment[i].text = treatments[i]
+            }
+            
         }
         
         super.viewDidLoad()
