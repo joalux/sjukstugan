@@ -18,14 +18,6 @@ class NumberViewController: UITableViewController {
     var loadFirstTime = false
     let unwrapped: String = ""
     
-    let date = Date()
-    let formatter = DateFormatter()
-    
-    
-    
-    
-    
-    
     @IBOutlet var treatmentsTableView: UITableView!
     //@IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var newTreatment: UITextField!
@@ -35,14 +27,25 @@ class NumberViewController: UITableViewController {
         popOver.center = self.view.center
     }
     @IBAction func doneButton(_ sender: UIButton) {
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
         print(newTreatment.text)
         let test = newTreatment.text
         
         if let unwrapped = test{
             print("unwrappade \(unwrapped)")
-            treatments.append(unwrapped)
+            var newPost = "\(day!)/\(month!) \(unwrapped)"
+            print("nytt inlägg \(newPost)")
+            treatments.append(newPost)
             
-            db.collection("treatments").document(" \(unwrapped)").setData([
+            db.collection("treatments").document("\(unwrapped)").setData([
                 "name": "Los Angeles",
                 "state": "CA",
                 "country": "USA"
@@ -54,15 +57,8 @@ class NumberViewController: UITableViewController {
                 }
             }
         }
-        
-        
         self.popOver.removeFromSuperview()
-       
-        
-        
-        
         treatCount = 1 + treatCount
-        
         print(treatments)
         newTreatment.text = ""
         self.tableView.reloadData()
@@ -78,9 +74,10 @@ class NumberViewController: UITableViewController {
         let month = components.month
         let day = components.day
         
-        print("år \(year)")
-        print("månad \(month)")
-        print(day)
+        print("dagar, månad, år")
+        print(year!)
+        print(month!)
+        print(day!)
         
         
         db = Firestore.firestore()
