@@ -18,6 +18,13 @@ class NumberViewController: UITableViewController {
     var loadFirstTime = false
     let unwrapped: String = ""
     
+    let date = Date()
+    let formatter = DateFormatter()
+    
+    
+    
+    
+    
     
     @IBOutlet var treatmentsTableView: UITableView!
     //@IBOutlet weak var navBar: UINavigationItem!
@@ -30,27 +37,51 @@ class NumberViewController: UITableViewController {
     @IBAction func doneButton(_ sender: UIButton) {
         print(newTreatment.text)
         let test = newTreatment.text
+        
         if let unwrapped = test{
             print("unwrappade \(unwrapped)")
+            treatments.append(unwrapped)
+            
+            db.collection("treatments").document(" \(unwrapped)").setData([
+                "name": "Los Angeles",
+                "state": "CA",
+                "country": "USA"
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
         }
-        /*
+        
         
         self.popOver.removeFromSuperview()
        
-         let data: [String: Any] = [:]
         
-        db.collection("treatments").document(unwrapped).setData(data)
         
-        treatments.append(unwrapped)
         
         treatCount = 1 + treatCount
         
         print(treatments)
         newTreatment.text = ""
-        self.tableView.reloadData()*/
+        self.tableView.reloadData()
     }
  
     override func viewDidLoad() {
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        print("år \(year)")
+        print("månad \(month)")
+        print(day)
+        
         
         db = Firestore.firestore()
         print("treatments Arrayen from start \(treatments)")
