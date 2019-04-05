@@ -15,6 +15,7 @@ class NumberViewController: UITableViewController {
     var treatments: [String] = []
     var i = 0
     var treatCount = 0
+    var index = 0
     var loadFirstTime = false
     let unwrapped: String = ""
     
@@ -35,28 +36,29 @@ class NumberViewController: UITableViewController {
         let year =  components.year
         let month = components.month
         let day = components.day
+        var newPost = "test"
+        let unwrapped = ""
+         let data: [String: Any] = [:]
+        
+        var dataChecker = treatments.count
         
         print(newTreatment.text)
         let test = newTreatment.text
         
         if let unwrapped = test{
             print("unwrappade \(unwrapped)")
-            var newPost = "\(day!)/\(month!) \(unwrapped)"
+            newPost = "\(day!)-\(month!)-\(year!) \(unwrapped)"
             print("nytt inlägg \(newPost)")
             treatments.append(newPost)
-            
-            db.collection("treatments").document("\(unwrapped)").setData([
-                "name": "Los Angeles",
-                "state": "CA",
-                "country": "USA"
-            ]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-                }
-            }
+           
         }
+        
+        print("sista inlägget \(treatments[treatments.count-1])")
+        
+        let post = treatments[treatments.count-1]
+        print("!!!!!: \(post)")
+        db.collection("treatments").document(post).setData(data)
+        
         self.popOver.removeFromSuperview()
         treatCount = 1 + treatCount
         print(treatments)
@@ -82,6 +84,17 @@ class NumberViewController: UITableViewController {
         
         db = Firestore.firestore()
         print("treatments Arrayen from start \(treatments)")
+        
+        let docRef = db.collection("treatments").document("SF")
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
         /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
