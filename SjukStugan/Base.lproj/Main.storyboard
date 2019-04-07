@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dJk-h2-ePX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -103,11 +103,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="znH-mC-Qqx">
-                                <rect key="frame" x="20" y="412" width="97" height="189"/>
+                                <rect key="frame" x="20" y="412" width="116" height="189"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9m-1L-8SB">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
-                                        <state key="normal" title="-Behandlingar">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
+                                        <state key="normal" title="- Behandlingar">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -115,20 +115,26 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxy-4r-7Rd">
-                                        <rect key="frame" x="0.0" y="53" width="97" height="30"/>
-                                        <state key="normal" title="-Ansök">
+                                        <rect key="frame" x="0.0" y="53" width="116" height="30"/>
+                                        <state key="normal" title="- Vårdkontakter">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="0I1-XJ-tEi" kind="show" identifier="toContacts" id="Zdm-kJ-xhM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xS8-lV-tIc">
-                                        <rect key="frame" x="0.0" y="106" width="97" height="30"/>
-                                        <state key="normal" title="-Hitta andra">
+                                        <rect key="frame" x="0.0" y="106" width="116" height="30"/>
+                                        <state key="normal" title="- Mina mediciner">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="dJk-h2-ePX" kind="show" identifier="toMedicine" id="s2R-lF-Qg6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zj1-85-EEt">
-                                        <rect key="frame" x="0.0" y="159" width="97" height="30"/>
-                                        <state key="normal" title="-Tips och råd">
+                                        <rect key="frame" x="0.0" y="159" width="116" height="30"/>
+                                        <state key="normal" title="- Tips och råd">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -375,6 +381,301 @@
             </objects>
             <point key="canvasLocation" x="2780" y="136"/>
         </scene>
+        <!--Mediciner View Controller-->
+        <scene sceneID="9U7-wt-QmD">
+            <objects>
+                <viewController id="dJk-h2-ePX" customClass="medicinerViewController" customModule="SjukStugan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FRO-Rk-Xng">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cj8-MO-wf8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Mina mediciner" id="W9i-IY-S8g">
+                                        <barButtonItem key="leftBarButtonItem" title="❮ Tillbaka" id="WWx-rV-aaY">
+                                            <connections>
+                                                <segue destination="v8r-2p-hJg" kind="show" identifier="backToMain" id="rsM-px-Ctm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wru-Mp-r7T">
+                                            <connections>
+                                                <action selector="openPopover:" destination="dJk-h2-ePX" id="EuU-ho-l3U"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UAE-LD-GPH">
+                                <rect key="frame" x="16" y="71" width="343" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Op5-b8-I8r">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UAE-LD-GPH" firstAttribute="top" secondItem="Cj8-MO-wf8" secondAttribute="bottom" id="CM1-VT-sZ7"/>
+                            <constraint firstItem="qO7-Nz-H4d" firstAttribute="trailing" secondItem="UAE-LD-GPH" secondAttribute="trailing" constant="16" id="Qjp-HJ-UZb"/>
+                            <constraint firstItem="Cj8-MO-wf8" firstAttribute="top" secondItem="qO7-Nz-H4d" secondAttribute="top" id="RXp-H9-Io6"/>
+                            <constraint firstItem="Cj8-MO-wf8" firstAttribute="leading" secondItem="qO7-Nz-H4d" secondAttribute="leading" id="URS-Av-LNl"/>
+                            <constraint firstItem="UAE-LD-GPH" firstAttribute="leading" secondItem="qO7-Nz-H4d" secondAttribute="leading" constant="16" id="dLO-vh-f2J"/>
+                            <constraint firstItem="Cj8-MO-wf8" firstAttribute="trailing" secondItem="qO7-Nz-H4d" secondAttribute="trailing" id="qPG-rt-JTC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qO7-Nz-H4d"/>
+                    </view>
+                    <connections>
+                        <outlet property="medicinList" destination="UAE-LD-GPH" id="uhJ-kQ-Hh8"/>
+                        <outlet property="popOver" destination="3Pf-z4-9sh" id="9c0-sc-SlM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Te6-ki-68n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="3Pf-z4-9sh">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ny medicin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7d2-To-ESU">
+                            <rect key="frame" x="81" y="54" width="86" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="C19-Mm-zW9"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1004" y="1059"/>
+        </scene>
+        <!--Contacts View Controller-->
+        <scene sceneID="DYu-cN-tfa">
+            <objects>
+                <viewController id="0I1-XJ-tEi" customClass="contactsViewController" customModule="SjukStugan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q9O-Q6-FrV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-KU-ryj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Kontakter" id="ivN-JA-tLK">
+                                        <barButtonItem key="leftBarButtonItem" title="❮Tillbaka" id="fSU-uW-PmL">
+                                            <connections>
+                                                <segue destination="v8r-2p-hJg" kind="show" identifier="backToMain" id="UX2-wx-rb2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbH-4o-BeP">
+                                <rect key="frame" x="16" y="82" width="126" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="- Sjukhus i sverige">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSjukhus:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="RjA-pA-5AL"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-dg-xe3">
+                                <rect key="frame" x="16" y="146" width="239" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-NG-W3N">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                        <state key="normal" title="Stockholm"/>
+                                        <connections>
+                                            <action selector="showKarolinska:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="HaT-e5-JYc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFF-Wy-7dV">
+                                        <rect key="frame" x="79" y="0.0" width="65" height="30"/>
+                                        <state key="normal" title="Göteborg"/>
+                                        <connections>
+                                            <action selector="showSahlgrenska:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="qtx-zx-SP4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBv-lU-s5o">
+                                        <rect key="frame" x="150" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Luleå"/>
+                                        <connections>
+                                            <action selector="showSunderby:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="YKm-zc-cTV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yic-Zn-RUY">
+                                        <rect key="frame" x="193" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Malmö"/>
+                                        <connections>
+                                            <action selector="showSkåneuni:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="oMF-UG-eks"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fqO-Hv-9Qg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="dop-NX-R2z">
+                                <rect key="frame" x="16" y="203" width="196" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jot-WP-aRJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                        <state key="normal" title="Stockholm"/>
+                                        <connections>
+                                            <action selector="ASIHStockholm:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="qvJ-Zw-iSs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzo-kS-QpP">
+                                        <rect key="frame" x="79" y="0.0" width="65" height="30"/>
+                                        <state key="normal" title="Göteborg"/>
+                                        <connections>
+                                            <action selector="ASIHGoteborg:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="bkQ-kd-e2Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0Z-PN-ycs">
+                                        <rect key="frame" x="150" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Malmö"/>
+                                        <connections>
+                                            <action selector="ASIHMalmo:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="Kb9-6k-0ba"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ckU-Qe-ybS"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vårdmottagningar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k83-iG-0s1">
+                                <rect key="frame" x="16" y="129" width="138" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-Bh-cmW">
+                                <rect key="frame" x="16" y="250" width="129" height="30"/>
+                                <state key="normal" title="- Patientföreningar"/>
+                                <connections>
+                                    <action selector="patientforeningar:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="gVV-fn-UKQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-ft-MON">
+                                <rect key="frame" x="16" y="297" width="139" height="30"/>
+                                <state key="normal" title="- Försäkringskassan"/>
+                                <connections>
+                                    <action selector="forsakringskassan:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="oAr-iX-n3j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Färdtjänst" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-Sa-L49">
+                                <rect key="frame" x="16" y="344" width="76" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-n6-eaB">
+                                <rect key="frame" x="16" y="361" width="239" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgg-sT-EMb">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                        <state key="normal" title="Stockholm"/>
+                                        <connections>
+                                            <action selector="fardtjanstStockholm:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="4SA-VW-6k1"/>
+                                            <action selector="showKarolinska:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="1w0-2H-4Hn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-aS-h2o">
+                                        <rect key="frame" x="79" y="0.0" width="65" height="30"/>
+                                        <state key="normal" title="Göteborg"/>
+                                        <connections>
+                                            <action selector="fardtjanstGoteborg:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="MrT-Ri-GWf"/>
+                                            <action selector="showSahlgrenska:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="nf8-HN-tDU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-tL-ZrY">
+                                        <rect key="frame" x="150" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Luleå"/>
+                                        <connections>
+                                            <action selector="fardtjanstLulea:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="YpF-UN-anc"/>
+                                            <action selector="showSunderby:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="R6O-gy-6uj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5l-Ul-W5t">
+                                        <rect key="frame" x="193" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Malmö"/>
+                                        <connections>
+                                            <action selector="fardtjanstMalmo:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="lQS-fA-aNb"/>
+                                            <action selector="showSkåneuni:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="eKK-LA-Nfl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="V1n-tJ-psV"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-uf-TaA">
+                                <rect key="frame" x="16" y="408" width="124" height="30"/>
+                                <state key="normal" title="- 1177 Vårdguiden"/>
+                                <connections>
+                                    <action selector="vardguiden:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="BkC-nX-SaE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASIH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSk-Ay-VKx">
+                                <rect key="frame" x="16" y="184" width="38" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JrO-KU-ryj" firstAttribute="top" secondItem="0pX-2m-cJx" secondAttribute="top" id="226-ZY-5Ht"/>
+                            <constraint firstItem="JrO-KU-ryj" firstAttribute="trailing" secondItem="0pX-2m-cJx" secondAttribute="trailing" id="3PV-Wd-feh"/>
+                            <constraint firstItem="Sk0-n6-eaB" firstAttribute="top" secondItem="ixb-ft-MON" secondAttribute="bottom" constant="34" id="42Z-eg-IGW"/>
+                            <constraint firstItem="aSk-Ay-VKx" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="6DH-g4-Ps2"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g3W-Sa-L49" secondAttribute="trailing" symbolic="YES" id="Fpj-jd-QW7"/>
+                            <constraint firstItem="dop-NX-R2z" firstAttribute="leading" secondItem="aSk-Ay-VKx" secondAttribute="leading" id="Hsw-ks-nbD"/>
+                            <constraint firstItem="ixb-ft-MON" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="Mna-gr-k4U"/>
+                            <constraint firstItem="YqO-Bh-cmW" firstAttribute="top" secondItem="dop-NX-R2z" secondAttribute="bottom" constant="17" id="N8e-Jp-hPA"/>
+                            <constraint firstItem="k83-iG-0s1" firstAttribute="top" secondItem="fbH-4o-BeP" secondAttribute="bottom" constant="17" id="OEf-47-eyM"/>
+                            <constraint firstItem="Sk0-n6-eaB" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="Ocy-DZ-pHL"/>
+                            <constraint firstItem="fbH-4o-BeP" firstAttribute="top" secondItem="JrO-KU-ryj" secondAttribute="bottom" constant="18" id="Rtu-cc-6PL"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ixb-ft-MON" secondAttribute="trailing" symbolic="YES" id="V9A-MD-0ow"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YqO-Bh-cmW" secondAttribute="trailing" symbolic="YES" id="WvD-NO-Wcu"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aSk-Ay-VKx" secondAttribute="trailing" symbolic="YES" id="Wx7-2N-Dd9"/>
+                            <constraint firstItem="k83-iG-0s1" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="Xl4-YF-3FM"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k83-iG-0s1" secondAttribute="trailing" symbolic="YES" id="Y6s-0f-6pH"/>
+                            <constraint firstItem="Ca7-dg-xe3" firstAttribute="top" secondItem="q9O-Q6-FrV" secondAttribute="top" constant="146" id="YDp-yq-Psh"/>
+                            <constraint firstItem="Ca7-dg-xe3" firstAttribute="top" secondItem="fbH-4o-BeP" secondAttribute="bottom" constant="34" id="Yb2-uI-UyZ"/>
+                            <constraint firstItem="g3W-Sa-L49" firstAttribute="top" secondItem="ixb-ft-MON" secondAttribute="bottom" constant="17" id="ZY3-1k-Bve"/>
+                            <constraint firstItem="Ca7-dg-xe3" firstAttribute="leading" secondItem="q9O-Q6-FrV" secondAttribute="leadingMargin" id="bZV-tL-l9d"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IaZ-uf-TaA" secondAttribute="trailing" symbolic="YES" id="dGs-07-bgn"/>
+                            <constraint firstItem="IaZ-uf-TaA" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="eMv-9J-6Fe"/>
+                            <constraint firstItem="aSk-Ay-VKx" firstAttribute="top" secondItem="Ca7-dg-xe3" secondAttribute="bottom" constant="8" id="f6H-RD-lKl"/>
+                            <constraint firstItem="g3W-Sa-L49" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="hNS-Zc-Xwb"/>
+                            <constraint firstItem="IaZ-uf-TaA" firstAttribute="top" secondItem="Sk0-n6-eaB" secondAttribute="bottom" constant="17" id="i7G-i1-qjx"/>
+                            <constraint firstItem="ixb-ft-MON" firstAttribute="top" secondItem="YqO-Bh-cmW" secondAttribute="bottom" constant="17" id="jHZ-JD-xL3"/>
+                            <constraint firstItem="Ca7-dg-xe3" firstAttribute="leading" secondItem="fbH-4o-BeP" secondAttribute="leading" id="k7b-qj-aSA"/>
+                            <constraint firstItem="JrO-KU-ryj" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" id="kuS-Dc-kxM"/>
+                            <constraint firstItem="dop-NX-R2z" firstAttribute="top" secondItem="Ca7-dg-xe3" secondAttribute="bottom" constant="27" id="lLb-mX-sLf"/>
+                            <constraint firstItem="YqO-Bh-cmW" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="mFw-df-9hi"/>
+                            <constraint firstItem="0pX-2m-cJx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fbH-4o-BeP" secondAttribute="trailing" symbolic="YES" id="ocw-ih-UI2"/>
+                            <constraint firstItem="fbH-4o-BeP" firstAttribute="leading" secondItem="0pX-2m-cJx" secondAttribute="leading" constant="16" id="zjF-x7-Pdc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0pX-2m-cJx"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="cityButtons" destination="ugf-NG-W3N" collectionClass="NSMutableArray" id="eiO-VY-YP1"/>
+                        <outletCollection property="cityButtons" destination="zFF-Wy-7dV" collectionClass="NSMutableArray" id="UNd-c0-Me2"/>
+                        <outletCollection property="cityButtons" destination="ZBv-lU-s5o" collectionClass="NSMutableArray" id="ZVx-eE-uih"/>
+                        <outletCollection property="cityButtons" destination="yic-Zn-RUY" collectionClass="NSMutableArray" id="5Ul-pQ-QOK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ex3-po-bbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="926.98650674662679"/>
+        </scene>
         <!--Diagnos View Controller-->
         <scene sceneID="PUr-4x-rQP">
             <objects>
@@ -528,6 +829,6 @@
         <image name="sjukstugan" width="372.41378784179688" height="352.55172729492188"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5rY-BR-0Jj"/>
+        <segue reference="rsM-px-Ctm"/>
     </inferredMetricsTieBreakers>
 </document>

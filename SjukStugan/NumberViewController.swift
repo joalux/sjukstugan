@@ -37,10 +37,10 @@ class NumberViewController: UITableViewController {
         let month = components.month
         let day = components.day
         var newPost = "test"
-        let unwrapped = ""
+        //let unwrapped = ""
          let data: [String: Any] = [:]
         
-        var dataChecker = treatments.count
+        //var dataChecker = treatments.count
         
         print(newTreatment.text)
         let test = newTreatment.text

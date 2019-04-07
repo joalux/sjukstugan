@@ -25,7 +25,7 @@ class profileViewController: UIViewController {
     var treatments: [String] = []
     var timer: Timer!
     var countTreatments = 0
-    var i = 0, checker = 0
+    var i = 0
     
 
     override func viewDidLoad() {
@@ -33,20 +33,15 @@ class profileViewController: UIViewController {
         
         db = Firestore.firestore()
         
-        print("treatments arrayen utanför for loopen \(treatments)")
-        print("treatments arrayens längd utanför for loopen \(treatments.count)")
         
         countTreatments = treatments.count
         progressCounter.text = "\(countTreatments)"
        countTreatments = countTreatments - 1
-        print("Sistsa objektet i treatments \(treatments.count)")
-        if treatments.count > 0{
-            for i in 0...countTreatments{
-                
-                print("testing")
-                newTreatment[i].text = treatments[i]
-                checker = checker + 1
-                
+                if treatments.count > 0{
+            for i in 0...5{
+               
+                newTreatment[i].text = treatments[countTreatments]
+                countTreatments = countTreatments - 1
             }
         }
         
@@ -57,18 +52,30 @@ class profileViewController: UIViewController {
         
    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTreatments" {
+        
+        if segue.identifier == "toTreatments"  {
             if let destination = segue.destination as? NumberViewController {
                 destination.treatments = treatments
                 print(treatments)
                 destination.treatCount = countTreatments
                 print("Going to treatments count: \(countTreatments)")
             }
+        }
+        if segue.identifier == "toContacts"  {
+            if let destination = segue.destination as? contactsViewController {
+                destination.treatments = treatments
+                print(treatments)
+                destination.treatCount = countTreatments
+                print("Going to contacts count: \(countTreatments)")
+            }
+        }
+        
+            
             
         }
     }
     
-}
+
 
 
 

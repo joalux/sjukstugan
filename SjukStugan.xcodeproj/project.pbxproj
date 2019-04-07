@@ -14,6 +14,8 @@
 		410E212A2227F14500CB2EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 410E21292227F14500CB2EFF /* Assets.xcassets */; };
 		410E212D2227F14500CB2EFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E212B2227F14500CB2EFF /* LaunchScreen.storyboard */; };
 		410E21382227F14600CB2EFF /* SjukStuganTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21372227F14600CB2EFF /* SjukStuganTests.swift */; };
+		41584036225A0F1700BDBB36 /* medicinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41584035225A0F1700BDBB36 /* medicinerViewController.swift */; };
+		4164C1182257692D00A7B168 /* contactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164C1172257692D00A7B168 /* contactsViewController.swift */; };
 		41CBA262224B845500246F59 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CBA261224B845500246F59 /* NumberViewController.swift */; };
 		41CBA2D4224E366500246F59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CBA2D3224E366400246F59 /* GoogleService-Info.plist */; };
 		8D49C856BDB6CC72425AF848 /* Pods_SjukStugan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C455A63FC156C71E418791BE /* Pods_SjukStugan.framework */; };
@@ -43,6 +45,8 @@
 		410E21332227F14500CB2EFF /* SjukStuganTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjukStuganTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		410E21372227F14600CB2EFF /* SjukStuganTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SjukStuganTests.swift; sourceTree = "<group>"; };
 		410E21392227F14600CB2EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41584035225A0F1700BDBB36 /* medicinerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medicinerViewController.swift; sourceTree = "<group>"; };
+		4164C1172257692D00A7B168 /* contactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsViewController.swift; sourceTree = "<group>"; };
 		41CBA261224B845500246F59 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		41CBA2D3224E366400246F59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C455A63FC156C71E418791BE /* Pods_SjukStugan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SjukStugan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,10 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				410E21222227F14400CB2EFF /* AppDelegate.swift */,
+				41584035225A0F1700BDBB36 /* medicinerViewController.swift */,
 				410E21242227F14400CB2EFF /* ViewController.swift */,
 				41CBA2D3224E366400246F59 /* GoogleService-Info.plist */,
 				4101D36722280D6D003A4820 /* profileViewController.swift */,
 				410E21262227F14400CB2EFF /* Main.storyboard */,
+				4164C1172257692D00A7B168 /* contactsViewController.swift */,
 				41CBA261224B845500246F59 /* NumberViewController.swift */,
 				410E21292227F14500CB2EFF /* Assets.xcassets */,
 				410E212B2227F14500CB2EFF /* LaunchScreen.storyboard */,
@@ -241,7 +247,11 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Scaledrone/Scaledrone.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -254,7 +264,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Scaledrone.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -295,7 +309,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				410E21252227F14400CB2EFF /* ViewController.swift in Sources */,
+				41584036225A0F1700BDBB36 /* medicinerViewController.swift in Sources */,
 				41CBA262224B845500246F59 /* NumberViewController.swift in Sources */,
+				4164C1182257692D00A7B168 /* contactsViewController.swift in Sources */,
 				410E21232227F14400CB2EFF /* AppDelegate.swift in Sources */,
 				4101D36822280D6D003A4820 /* profileViewController.swift in Sources */,
 			);
