@@ -18,6 +18,7 @@ class NumberViewController: UITableViewController {
     var index = 0
     var loadFirstTime = false
     let unwrapped: String = ""
+    var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     
     @IBOutlet var treatmentsTableView: UITableView!
     //@IBOutlet weak var navBar: UINavigationItem!
@@ -25,6 +26,8 @@ class NumberViewController: UITableViewController {
     @IBOutlet var popOver: UIView!
     @IBAction func openPopButton(_ sender: UIBarButtonItem) {
         self.view.addSubview(popOver)
+        popOver.layer.borderColor = blue.cgColor
+        popOver.layer.borderWidth = 3.0
         popOver.center = self.view.center
     }
     @IBAction func doneButton(_ sender: UIButton) {
@@ -39,6 +42,9 @@ class NumberViewController: UITableViewController {
         var newPost = "test"
         //let unwrapped = ""
          let data: [String: Any] = [:]
+        
+        
+
         
         //var dataChecker = treatments.count
         
@@ -95,30 +101,13 @@ class NumberViewController: UITableViewController {
                 print("Document does not exist")
             }
         }
-        /*db.collection("treatments").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                
-                if self.loadFirstTime == true{
-                    for document in querySnapshot!.documents {
-                        print("document ID: \(document.documentID)")
-                        print("\(document.documentID) => \(document.data())")
-                        self.treatments.append(document.documentID)
-                        print("treatments arrayen \(self.treatments)")
-                    }
-                    self.treatmentsTableView.reloadData()
-                     self.loadFirstTime = false
-                }
-            }
-        }*/
         
 
         print("treatments arrayen \(treatments)")
         super.viewDidLoad()
         
         self.popOver.layer.cornerRadius = 10
-        self.popOver.backgroundColor = UIColor.lightGray
+        //self.popOver.backgroundColor = UIColor.lightGray
         
         //tableView.backgroundColor = UIColor.gray
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -158,9 +147,7 @@ class NumberViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("Deleted entry \(indexPath)")
-            print("Deleted entry \(indexPath.row)")
-            print("Deleted entry \(treatments[indexPath.row])")
+            
             db.collection("treatments").document("\(treatments[indexPath.row])").delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
@@ -171,7 +158,7 @@ class NumberViewController: UITableViewController {
             
             treatments.remove(at: indexPath.row)
             
-            print("efter delete \(treatments)")
+         
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()

@@ -38,11 +38,19 @@ class profileViewController: UIViewController {
         progressCounter.text = "\(countTreatments)"
        countTreatments = countTreatments - 1
                 if treatments.count > 0{
-            for i in 0...5{
-               
-                newTreatment[i].text = treatments[countTreatments]
-                countTreatments = countTreatments - 1
-            }
+                    if treatments.count > 5 {
+                        for i in 0...5{
+                            newTreatment[i].text = treatments[countTreatments]
+                            countTreatments = countTreatments - 1
+                        }
+                    }
+                    else {
+                        for i in 0...countTreatments{
+                            newTreatment[i].text = treatments[countTreatments]
+                            countTreatments = countTreatments - 1
+                        }
+                    }
+            
         }
         
         super.viewDidLoad()
@@ -67,6 +75,14 @@ class profileViewController: UIViewController {
                 print(treatments)
                 destination.treatCount = countTreatments
                 print("Going to contacts count: \(countTreatments)")
+            }
+        }
+        if segue.identifier == "toMedicine"  {
+            if let destination = segue.destination as? medicinerViewController {
+                destination.treatments = treatments
+                print(treatments)
+                destination.treatCount = countTreatments
+                print("Going to medicine count: \(countTreatments)")
             }
         }
         

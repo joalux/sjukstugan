@@ -30,8 +30,8 @@ class ViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    //print("document ID: \(document.documentID)")
-                    //print("\(document.documentID) => \(document.data())")
+                    print("document ID: \(document.documentID)")
+                    print("\(document.documentID) => \(document.data())")
                     self.treatments.append(document.documentID)
                     
                 }
@@ -41,6 +41,9 @@ class ViewController: UIViewController {
        
         
         super.viewDidLoad()
+        
+        print("treatments arrayen")
+        print(treatments)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
