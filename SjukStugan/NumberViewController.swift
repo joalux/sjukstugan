@@ -34,26 +34,25 @@ class NumberViewController: UITableViewController {
         
         let date = Date()
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         
         let year =  components.year
         let month = components.month
         let day = components.day
+        let hour = components.hour
+        let minute = components.minute
         var newPost = "test"
         //let unwrapped = ""
          let data: [String: Any] = [:]
+        print("hour \(hour)")
         
-        
-
-        
-        //var dataChecker = treatments.count
         
         print(newTreatment.text)
         let test = newTreatment.text
         
         if let unwrapped = test{
             print("unwrappade \(unwrapped)")
-            newPost = "\(day!)-\(month!)-\(year!) \(unwrapped)"
+            newPost = "\(hour!):\(minute!)  \(day!)-\(month!)-\(year!) \(unwrapped)"
             print("nytt inlägg \(newPost)")
             treatments.append(newPost)
            

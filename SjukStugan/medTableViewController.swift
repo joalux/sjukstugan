@@ -11,12 +11,17 @@ import Firebase
 
 class medTableViewController: UITableViewController {
     
+    @IBOutlet weak var medStepper: UIStepper!
     @IBOutlet var addMedPop: UIView!
     @IBOutlet weak var newMedTextField: UITextField!
     @IBOutlet var medList: UITableView!
     
+    
+    
+    let data: [String: Any] = [:]
     var db: Firestore!
     var meds: [String] = []
+    var newPost = "test"
     
     
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
@@ -25,8 +30,13 @@ class medTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        db = Firestore.firestore()
+    
        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     @IBAction func addMeds(_ sender: UIBarButtonItem) {
         self.view.addSubview(addMedPop)
@@ -39,8 +49,15 @@ class medTableViewController: UITableViewController {
        
         
         if let unwrapped = newMedTextField.text{
-             meds.append("\(unwrapped)")
+            print("unwrapped \(unwrapped) \(medStepper.value)")
+            newPost = "\(unwrapped) \(medStepper.value) "
+             meds.append(unwrapped)
+            
         }
+        let post = meds[meds.count-1]
+        print("!!!!!:)")
+        print(post)
+        db.collection("medicine").document(post).setData(data)
         
         newMedTextField.text = ""
        self.tableView.reloadData()
@@ -48,6 +65,8 @@ class medTableViewController: UITableViewController {
     }
     
     
+    @IBAction func addMed(_ sender: UIStepper) {
+    }
     
     // MARK: - Table view data source
 

@@ -16,12 +16,18 @@ class ViewController: UIViewController {
     var datab : Firestore!
 
    
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
      var treatments: [String] = []
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+    }
+    
+    override func viewDidLoad() {
         
         datab = Firestore.firestore()
         
@@ -46,6 +52,7 @@ class ViewController: UIViewController {
         print(treatments)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMain" {
