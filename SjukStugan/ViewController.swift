@@ -57,27 +57,21 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func signIn(_ sender: UIButton) {
-        var mail = userName.text!
-        var pass = password.text!
-        Auth.auth().signIn(withEmail: mail, password: pass) { [weak self] user, error in
-            guard let strongSelf = self else { return }
-            if  Auth.auth().currentUser != nil {
-                //segue to next view
-                print("login successful")
-                
+        Auth.auth().signIn(withEmail: userName.text!, password: password.text!) { (user, error) in
+            if error == nil{
+                self.performSegue(withIdentifier: "loginToHome", sender: self)
             }
             else{
-                print("login unsuccessful")
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
+        
         }
         
-        
-        
     }
-    
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in

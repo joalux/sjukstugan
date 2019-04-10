@@ -131,6 +131,7 @@
                         <outlet property="password" destination="Iyy-aq-nb1" id="OzG-0q-zY9"/>
                         <outlet property="popOver" destination="SCN-Od-Mbc" id="TsV-Ak-9yg"/>
                         <outlet property="userName" destination="yIn-EL-JNp" id="pk3-rb-m19"/>
+                        <segue destination="v8r-2p-hJg" kind="show" identifier="loginToHome" id="Gp6-n2-Dyv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -950,6 +951,6 @@
         <image name="sjukstugan" width="372.41378784179688" height="352.55172729492188"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5rY-BR-0Jj"/>
+        <segue reference="Gp6-n2-Dyv"/>
     </inferredMetricsTieBreakers>
 </document>
