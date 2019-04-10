@@ -51,6 +51,7 @@
 		41CBA261224B845500246F59 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		41CBA2D3224E366400246F59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		41DC44EF225B66D0006E03B2 /* medTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medTableViewController.swift; sourceTree = "<group>"; };
+		41DC44F1225E184B006E03B2 /* SjukStugan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SjukStugan.entitlements; sourceTree = "<group>"; };
 		C455A63FC156C71E418791BE /* Pods_SjukStugan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SjukStugan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,6 +97,7 @@
 		410E21212227F14400CB2EFF /* SjukStugan */ = {
 			isa = PBXGroup;
 			children = (
+				41DC44F1225E184B006E03B2 /* SjukStugan.entitlements */,
 				410E21222227F14400CB2EFF /* AppDelegate.swift */,
 				41584035225A0F1700BDBB36 /* medicinerViewController.swift */,
 				410E21242227F14400CB2EFF /* ViewController.swift */,
@@ -190,6 +192,11 @@
 				TargetAttributes = {
 					410E211E2227F14400CB2EFF = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					410E21322227F14500CB2EFF = {
 						CreatedOnToolsVersion = 10.1;
@@ -480,6 +487,7 @@
 			baseConfigurationReference = 0CC66C9BBFDC8DF26E3846EE /* Pods-SjukStugan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SjukStugan/SjukStugan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3K73A2WX3;
 				INFOPLIST_FILE = SjukStugan/Info.plist;
@@ -499,6 +507,7 @@
 			baseConfigurationReference = 3AB2840239492B56A4658BD2 /* Pods-SjukStugan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SjukStugan/SjukStugan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3K73A2WX3;
 				INFOPLIST_FILE = SjukStugan/Info.plist;

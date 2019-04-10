@@ -85,11 +85,18 @@ class profileViewController: UIViewController {
                 print("Going to medicine count: \(countTreatments)")
             }
         }
+        if segue.identifier == "logOut" {
+            print("Signng out")
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+        }
         
-            
-            
         }
     }
+}
     
 
 
