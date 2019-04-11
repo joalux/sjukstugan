@@ -31,6 +31,7 @@ class ViewController: UIViewController {
      var treatments: [String] = []
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     
+    
     @IBAction func openSignUp(_ sender: UIButton) {
         self.view.addSubview(popOver)
         popOver.layer.borderColor = blue.cgColor
@@ -56,6 +57,10 @@ class ViewController: UIViewController {
             newUserLabel.text = "Lösenord måste vara lika och minst 6 tecken"
         }
     }
+    @IBAction func closeSignIn(_ sender: UIButton) {
+        self.popOver.removeFromSuperview()
+    }
+    
     @IBAction func signIn(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: userName.text!, password: password.text!) { (user, error) in
             if error == nil{
@@ -84,10 +89,21 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        /*let docRef = datab.collection("users").document("user1").collection("treatments").document("mr")
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("------------------Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }*/
+        
         
         datab = Firestore.firestore()
-        
-        datab.collection("treatments").getDocuments() { (querySnapshot, err) in
+        let usersCollectionRef = datab.collection("users")
+        datab.collection("users").document("user1").collection("treatments").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -111,12 +127,14 @@ class ViewController: UIViewController {
     
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMain" {
+        if segue.identifier == "loginToHome" {
             if let destination = segue.destination as? profileViewController {
                 destination.treatments = treatments
+                destination.userName = (userName.text)!
+                print("Going to start totTreatments: \(treatments.count)")
             }
-            print(treatments)
-            print("Going to start totTreatments: \(treatments.count)")
+            /*print(treatments)
+            print("Going to start totTreatments: \(treatments.count)")*/
         }
     }
 

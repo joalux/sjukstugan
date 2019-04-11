@@ -21,16 +21,18 @@ class profileViewController: UIViewController {
     @IBOutlet weak var divider: UILabel!
     @IBOutlet var newTreatment: [UILabel]!
     @IBOutlet var bokningar: [UIStackView]!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var treatments: [String] = []
     var timer: Timer!
     var countTreatments = 0
     var i = 0
+    var userName = ""
     
 
     override func viewDidLoad() {
         progressCounter.text = ""
-        
+        nameLabel.text = userName
         db = Firestore.firestore()
         
         
