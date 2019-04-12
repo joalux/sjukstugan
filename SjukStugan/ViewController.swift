@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     
     var datab : Firestore!
-     var handle: AuthStateDidChangeListenerHandle?
+    var handle: AuthStateDidChangeListenerHandle?
 
    
     @IBOutlet var popOver: UIView!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var newUserLabel: UILabel!
     
     
-    let data: [String: Any] = [:]
+   // let data: [String: Any] = ["]
      var treatments: [String] = []
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     
@@ -43,7 +43,8 @@ class ViewController: UIViewController {
         var newPass = newPassword.text!
         var confirmPass = confirmPassword.text!
         
-        //datab.collection("users").document("new users").collection("treatments").document("new").setData(data)
+       // datab.collection("users").addDocument(\(newUsername.text!))
+        
 
         
         if newPass == confirmPass || newPass.count > 6 {
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
                 if (error == nil) {
                     print("created user")
                     print(newName)
+                    
                     
                   
                 } else {
@@ -69,12 +71,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-        
-        datab = Firestore.firestore()
-        datab.collection("users").document("!!!!!!!!").collection("testing").document("asd").setData(data)
-       
-            
-        
         
         Auth.auth().signIn(withEmail: userName.text!, password: password.text!) { (user, error) in
             if error == nil{
@@ -106,23 +102,33 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        /*datab.collection("treatments").document("LA").setData([
-            "name": "Los Angeles",
-            "state": "CA",
-            "country": "USA"
-        ]) { err in
+        datab = Firestore.firestore()
+        
+        //datab.collection("users").addDocument(data: ["behandling": "röntgen"])
+        
+        datab.collection("users").getDocuments() { (querySnapshot, err) in
             if let err = err {
-                print("Error writing document: \(err)")
+                print("Error getting documents: \(err)")
             } else {
-                print("Document successfully written!")
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
             }
-        }*/
+        }
         
         
-        //datab.collection("users").document("user1").setData(data)
-       
-
-        // Do any additional setup after loading the view, typically from a nib.
+        datab.collection("users").addSnapshotListener {
+            documentSnapShot, error in
+            
+            for document in (documentSnapShot?.documents)! {
+                print(document["behandling"])
+                
+            }
+            
+            
+        }
+        
+                // Do any additional setup after loading the view, typically from a nib.
     }
     
     

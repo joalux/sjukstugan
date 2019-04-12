@@ -19,6 +19,7 @@ class NumberViewController: UITableViewController {
     var loadFirstTime = false
     let unwrapped: String = ""
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
+    let username = ""
     
     @IBOutlet var treatmentsTableView: UITableView!
     //@IBOutlet weak var navBar: UINavigationItem!
@@ -55,10 +56,10 @@ class NumberViewController: UITableViewController {
             newPost = "\(hour!):\(minute!)  \(day!)-\(month!)-\(year!) \(unwrapped)"
             print("nytt inlägg \(newPost)")
             treatments.append(newPost)
-           
+           db.collection("users").document("\(userName)").collection("behandlingar").addDocument(data: ["behandling" : "stråling"])
         }
         
-        print("sista inlägget \(treatments[treatments.count-1])")
+        //print("sista inlägget \(treatments[treatments.count-1])")
         
         let post = treatments[treatments.count-1]
         print("!!!!!: \(post)")

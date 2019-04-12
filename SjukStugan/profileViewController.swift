@@ -36,6 +36,10 @@ class profileViewController: UIViewController {
         db = Firestore.firestore()
         
         
+        
+        //db.collection("users").document("\(userName)").collection("behandlingar").addDocument(data: ["behandling" : "stråling"])
+        
+
         countTreatments = treatments.count
         progressCounter.text = "\(countTreatments)"
        countTreatments = countTreatments - 1
@@ -65,6 +69,7 @@ class profileViewController: UIViewController {
         
         if segue.identifier == "toTreatments"  {
             if let destination = segue.destination as? NumberViewController {
+                
                 destination.treatments = treatments
                 print(treatments)
                 destination.treatCount = countTreatments
