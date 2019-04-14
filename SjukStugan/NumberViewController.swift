@@ -19,7 +19,8 @@ class NumberViewController: UITableViewController {
     var loadFirstTime = false
     let unwrapped: String = ""
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
-    let username = ""
+    var username = ""
+    let data: [String: Any] = [:]
     
     @IBOutlet var treatmentsTableView: UITableView!
     //@IBOutlet weak var navBar: UINavigationItem!
@@ -48,6 +49,7 @@ class NumberViewController: UITableViewController {
         print("hour \(hour)")
         
         
+        
         print(newTreatment.text)
         let test = newTreatment.text
         
@@ -56,14 +58,16 @@ class NumberViewController: UITableViewController {
             newPost = "\(hour!):\(minute!)  \(day!)-\(month!)-\(year!) \(unwrapped)"
             print("nytt inlägg \(newPost)")
             treatments.append(newPost)
-           db.collection("users").document("\(userName)").collection("behandlingar").addDocument(data: ["behandling" : "stråling"])
+            
+            db.collection("users").document("m@mail.com").collection("behandlingar").document("\(newPost)").setData(data)
+
+            
+    
         }
         
-        //print("sista inlägget \(treatments[treatments.count-1])")
         
         let post = treatments[treatments.count-1]
         print("!!!!!: \(post)")
-        db.collection("treatments").document(post).setData(data)
         
         self.popOver.removeFromSuperview()
         treatCount = 1 + treatCount
@@ -73,7 +77,7 @@ class NumberViewController: UITableViewController {
     }
  
     override func viewDidLoad() {
-        
+        print("username \(username)")
         let date = Date()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: date)
@@ -89,18 +93,20 @@ class NumberViewController: UITableViewController {
         
         
         db = Firestore.firestore()
-        print("treatments Arrayen from start \(treatments)")
+        //print("treatments Arrayen from start \(treatments)")
+        
+        
         
         let docRef = db.collection("treatments").document("SF")
         
-        docRef.getDocument { (document, error) in
+       /* docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 print("Document data: \(dataDescription)")
             } else {
                 print("Document does not exist")
             }
-        }
+        }*/
         
 
         print("treatments arrayen \(treatments)")
@@ -212,16 +218,20 @@ class NumberViewController: UITableViewController {
      }
      */
     
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToStart" {
             
+            print(treatments)
+            print("Going to start totTreatments: \(treatCount)")
             if let destination = segue.destination as? profileViewController {
                 destination.countTreatments = treatCount
                 destination.treatments = treatments
+                destination.userName = username
+                destination.loadTreatments = loadFirstTime
             }
-            print(treatments)
-            print("Going to start totTreatments: \(treatCount)")
+           
         }
     }
     

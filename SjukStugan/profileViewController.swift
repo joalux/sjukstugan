@@ -11,9 +11,7 @@ import Firebase
 
 class profileViewController: UIViewController {
     
-    var db: Firestore!
-
-
+    var datab: Firestore!
 
     @IBOutlet weak var diagnosLabel: UILabel!
    
@@ -28,16 +26,37 @@ class profileViewController: UIViewController {
     var countTreatments = 0
     var i = 0
     var userName = ""
-    
+    var loadTreatments = false
+    let data: [String: Any] = [:]
+    //var label: UILabel
 
     override func viewDidLoad() {
         progressCounter.text = ""
         nameLabel.text = userName
-        db = Firestore.firestore()
-        
-        
-        
-        //db.collection("users").document("\(userName)").collection("behandlingar").addDocument(data: ["behandling" : "stråling"])
+        datab = Firestore.firestore()
+        print("is in profile")
+        print(treatments)
+        //newTreatment[0].text = userName
+        print("load is = \(loadTreatments)")
+        if loadTreatments == false {
+            datab.collection("users").document(userName).collection("behandlingar").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        self.treatments.append(document.documentID)
+                        self.newTreatment[self.i].text = document.documentID
+                        self.progressCounter.text = "\(self.treatments.count)"
+                        self.i = self.i + 1
+                    }
+                }
+            }
+            loadTreatments = true
+            
+        }
+  
+    
         
 
         countTreatments = treatments.count
@@ -65,14 +84,19 @@ class profileViewController: UIViewController {
         view.bringSubviewToFront(diagnosLabel)
         
    }
+
+
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toTreatments"  {
             if let destination = segue.destination as? NumberViewController {
-                
+                destination.loadFirstTime = loadTreatments
                 destination.treatments = treatments
                 print(treatments)
                 destination.treatCount = countTreatments
+                destination.username = userName
                 print("Going to treatments count: \(countTreatments)")
             }
         }
@@ -104,9 +128,5 @@ class profileViewController: UIViewController {
         }
     }
 }
-    
-
-
-
 
 

@@ -42,19 +42,19 @@ class ViewController: UIViewController {
         var newName = newUserName.text!
         var newPass = newPassword.text!
         var confirmPass = confirmPassword.text!
-        
-       // datab.collection("users").addDocument(\(newUsername.text!))
-        
-
-        
+        let data: [String: Any] = [:]
+    
         if newPass == confirmPass || newPass.count > 6 {
             Auth.auth().createUser(withEmail: newName, password: newPass) { authResult, error in
                 if (error == nil) {
                     print("created user")
+                    self.datab.collection("users").document("\(newName)").setData(data)
+                    //self.datab.collection("users").document("\(newName)").collection("behandlingar").document("(mr").setData(data)
+
+                  
+
                     print(newName)
                     
-                    
-                  
                 } else {
                     print("error!!! \(error)")
                 }
@@ -71,9 +71,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
+            
+        
         
         Auth.auth().signIn(withEmail: userName.text!, password: password.text!) { (user, error) in
             if error == nil{
+                
                 self.performSegue(withIdentifier: "loginToHome", sender: self)
             }
             else{
@@ -104,8 +107,9 @@ class ViewController: UIViewController {
         
         datab = Firestore.firestore()
         
-        //datab.collection("users").addDocument(data: ["behandling": "röntgen"])
-        
+        let data: [String: Any] = [:]
+        var treatments: [String] = []
+
         datab.collection("users").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -116,7 +120,6 @@ class ViewController: UIViewController {
             }
         }
         
-        
         datab.collection("users").addSnapshotListener {
             documentSnapShot, error in
             
@@ -124,8 +127,6 @@ class ViewController: UIViewController {
                 print(document["behandling"])
                 
             }
-            
-            
         }
         
                 // Do any additional setup after loading the view, typically from a nib.
@@ -135,9 +136,32 @@ class ViewController: UIViewController {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginToHome" {
             if let destination = segue.destination as? profileViewController {
+                
+                /*if loadTreatments == false {
+                 datab.collection("users").document(userName).collection("behandlingar").getDocuments() { (querySnapshot, err) in
+                 if let err = err {
+                 print("Error getting documents: \(err)")
+                 } else {
+                 for document in querySnapshot!.documents {
+                 print("\(document.documentID) => \(document.data())")
+                 self.treatments.append(document.documentID)
+                 self.newTreatment[self.i].text = document.documentID
+                 self.progressCounter.text = "\(self.treatments.count)"
+                 self.i = self.i + 1
+                 }
+                 }
+                 }
+                 loadTreatments = true
+                 
+                 }*/
+                
                 destination.treatments = treatments
                 destination.userName = (userName.text)!
                 print("Going to start totTreatments: \(treatments.count)")
+                
+                
+                
+                
             }
             
         }

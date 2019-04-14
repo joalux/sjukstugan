@@ -247,31 +247,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uO8-19-gAq" customClass="ProgressBarView" customModule="SjukStugan" customModuleProvider="target">
-                                <rect key="frame" x="143" y="50" width="240" height="252"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antal behandlingar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZS-KU-zki">
-                                        <rect key="frame" x="67" y="51.5" width="144" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-iW-duj">
-                                        <rect key="frame" x="139" y="96" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="uZS-KU-zki" firstAttribute="leading" secondItem="uO8-19-gAq" secondAttribute="leading" constant="67" id="6hf-KD-NMC"/>
-                                    <constraint firstItem="uZS-KU-zki" firstAttribute="top" secondItem="uO8-19-gAq" secondAttribute="top" constant="51.5" id="7we-sM-tzR"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yeu-iW-duj" secondAttribute="trailing" constant="101" id="olQ-dE-Ncg"/>
-                                    <constraint firstAttribute="trailing" secondItem="uZS-KU-zki" secondAttribute="trailing" constant="29" id="wbL-pS-Eop"/>
-                                    <constraint firstItem="Yeu-iW-duj" firstAttribute="top" secondItem="uZS-KU-zki" secondAttribute="bottom" constant="24" id="xh1-A2-G0N"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gas-wW-J5g">
                                 <rect key="frame" x="13" y="135" width="178" height="218"/>
                                 <subviews>
@@ -332,10 +307,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senaste behandlingar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-d5-bUl">
-                                <rect key="frame" x="12" y="64" width="205" height="62.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="0BF-2B-yih"/>
-                                </constraints>
+                                <rect key="frame" x="12" y="64" width="194" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -358,6 +330,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Oi-a2k">
+                                <rect key="frame" x="234" y="140" width="99" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -365,15 +344,11 @@
                             <constraint firstItem="znH-mC-Qqx" firstAttribute="top" secondItem="RO7-Ht-aSg" secondAttribute="top" constant="412" id="Epn-eH-5pq"/>
                             <constraint firstItem="reN-cI-d5Z" firstAttribute="top" secondItem="6T9-5B-fIP" secondAttribute="top" id="F8a-MS-Pnw"/>
                             <constraint firstItem="dwV-7i-Wek" firstAttribute="trailing" secondItem="6T9-5B-fIP" secondAttribute="trailing" id="Kgn-KS-WUs"/>
-                            <constraint firstItem="uO8-19-gAq" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" constant="143" id="LoL-6A-uyf"/>
                             <constraint firstItem="reN-cI-d5Z" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" constant="79" id="MtJ-k1-uT8"/>
-                            <constraint firstItem="6T9-5B-fIP" firstAttribute="trailing" secondItem="reN-cI-d5Z" secondAttribute="trailing" constant="80" id="ODE-r5-fcQ"/>
                             <constraint firstAttribute="trailing" secondItem="LnF-rS-nAi" secondAttribute="trailing" id="PKV-c7-IEQ"/>
                             <constraint firstItem="Gas-wW-J5g" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" constant="13" id="PzK-An-EAS"/>
                             <constraint firstItem="gRm-d5-bUl" firstAttribute="top" secondItem="reN-cI-d5Z" secondAttribute="bottom" id="RC6-Uj-ZvZ"/>
-                            <constraint firstItem="LnF-rS-nAi" firstAttribute="top" secondItem="uO8-19-gAq" secondAttribute="bottom" constant="72" id="TLe-zk-nvB"/>
                             <constraint firstItem="znH-mC-Qqx" firstAttribute="top" secondItem="LnF-rS-nAi" secondAttribute="bottom" constant="28" id="UU7-s8-Wph"/>
-                            <constraint firstItem="uO8-19-gAq" firstAttribute="top" secondItem="6T9-5B-fIP" secondAttribute="top" constant="30" id="YjK-cj-AJH"/>
                             <constraint firstItem="dwV-7i-Wek" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" id="aEd-mV-i8Z"/>
                             <constraint firstItem="gRm-d5-bUl" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" constant="12" id="aZw-YI-Xqv"/>
                             <constraint firstItem="LnF-rS-nAi" firstAttribute="top" secondItem="Gas-wW-J5g" secondAttribute="bottom" constant="21" id="cVn-yd-v9p"/>
@@ -382,11 +357,11 @@
                             <constraint firstItem="LnF-rS-nAi" firstAttribute="leading" secondItem="RO7-Ht-aSg" secondAttribute="leading" id="hal-D7-AIw"/>
                             <constraint firstItem="reN-cI-d5Z" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" constant="79" id="igz-45-bDs"/>
                             <constraint firstItem="6T9-5B-fIP" firstAttribute="trailing" secondItem="Gas-wW-J5g" secondAttribute="trailing" constant="184" id="jVx-O5-7SP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uO8-19-gAq" secondAttribute="trailing" constant="-24" id="kk5-aB-RWl"/>
                             <constraint firstItem="Gas-wW-J5g" firstAttribute="leading" secondItem="znH-mC-Qqx" secondAttribute="leading" constant="-7" id="rL9-Y8-Rfl"/>
                             <constraint firstItem="dwV-7i-Wek" firstAttribute="top" secondItem="6T9-5B-fIP" secondAttribute="top" id="spz-AY-PbU"/>
                             <constraint firstItem="reN-cI-d5Z" firstAttribute="top" secondItem="6T9-5B-fIP" secondAttribute="top" id="ujA-ul-IcA"/>
                             <constraint firstItem="Gas-wW-J5g" firstAttribute="top" secondItem="gRm-d5-bUl" secondAttribute="bottom" constant="8.5" id="wDj-ky-r4M"/>
+                            <constraint firstItem="6T9-5B-fIP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gRm-d5-bUl" secondAttribute="trailing" symbolic="YES" id="xdi-LY-gm3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6T9-5B-fIP"/>
                     </view>
@@ -399,7 +374,7 @@
                         <outlet property="diagnosLabel" destination="gRm-d5-bUl" id="OAQ-Xr-P4j"/>
                         <outlet property="divider" destination="LnF-rS-nAi" id="Pbn-b2-t6f"/>
                         <outlet property="nameLabel" destination="reN-cI-d5Z" id="ohW-WH-cB2"/>
-                        <outlet property="progressCounter" destination="Yeu-iW-duj" id="O0g-1y-EFF"/>
+                        <outlet property="progressCounter" destination="UJr-Oi-a2k" id="Ewf-0n-N2l"/>
                         <outletCollection property="bokningar" destination="Gas-wW-J5g" collectionClass="NSMutableArray" id="kPr-PB-icZ"/>
                         <outletCollection property="newTreatment" destination="l67-CG-6bf" collectionClass="NSMutableArray" id="ocT-9l-A0a"/>
                         <outletCollection property="newTreatment" destination="5Ln-Yp-9sb" collectionClass="NSMutableArray" id="OPg-1b-gOA"/>
@@ -428,7 +403,7 @@
                                 <navigationItem title="Behandlingar" id="bEI-hL-E9Q">
                                     <barButtonItem key="leftBarButtonItem" title="❮Tillbaka" id="KW2-Lp-fG8">
                                         <connections>
-                                            <segue destination="v8r-2p-hJg" kind="show" identifier="backToStart" id="5rY-BR-0Jj"/>
+                                            <segue destination="v8r-2p-hJg" kind="show" identifier="backToStart" id="v8v-mx-LVX"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="ihG-iM-sRY">
