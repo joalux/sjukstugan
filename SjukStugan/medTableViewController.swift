@@ -15,13 +15,15 @@ class medTableViewController: UITableViewController {
     @IBOutlet var addMedPop: UIView!
     @IBOutlet weak var newMedTextField: UITextField!
     @IBOutlet var medList: UITableView!
-    
-    
+    @IBOutlet weak var countMeds: UILabel!
     
     let data: [String: Any] = [:]
     var db: Firestore!
     var meds: [String] = []
     var newPost = "test"
+    var antMeds = 0
+    var stepperValue: Double = 0.0
+    
     
     
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
@@ -46,13 +48,11 @@ class medTableViewController: UITableViewController {
     }
    
     @IBAction func addNewMeds(_ sender: UIButton) {
-       
         
         if let unwrapped = newMedTextField.text{
-            print("unwrapped \(unwrapped) \(medStepper.value)")
-            newPost = "\(unwrapped) \(medStepper.value) "
-             meds.append(unwrapped)
-            
+            print("unwrapped \(unwrapped) \(antMeds)")
+            newPost = "\(unwrapped) \(antMeds) st "
+             meds.append(newPost)
         }
         let post = meds[meds.count-1]
         print("!!!!!:)")
@@ -63,9 +63,12 @@ class medTableViewController: UITableViewController {
        self.tableView.reloadData()
         self.addMedPop.removeFromSuperview()
     }
-    
-    
+
     @IBAction func addMed(_ sender: UIStepper) {
+        stepperValue = medStepper.value
+        antMeds = Int(stepperValue)
+    countMeds.text = "\(antMeds)"
+    
     }
     
     // MARK: - Table view data source
@@ -84,8 +87,6 @@ class medTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        
-
         cell.textLabel?.text = meds[indexPath.row]
         // Configure the cell...
         

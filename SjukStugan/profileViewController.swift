@@ -14,7 +14,8 @@ class profileViewController: UIViewController {
     var datab: Firestore!
 
     @IBOutlet weak var diagnosLabel: UILabel!
-   
+    @IBOutlet weak var totTreatmentsLabel: UILabel!
+    
     @IBOutlet weak var progressCounter: UILabel!
     @IBOutlet weak var divider: UILabel!
     @IBOutlet var newTreatment: [UILabel]!
@@ -33,6 +34,8 @@ class profileViewController: UIViewController {
     override func viewDidLoad() {
         progressCounter.text = ""
         nameLabel.text = userName
+        totTreatmentsLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+        totTreatmentsLabel.text = "Avklarade \n behandlingar"
         datab = Firestore.firestore()
         print("is in profile")
         print(treatments)
@@ -46,9 +49,13 @@ class profileViewController: UIViewController {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
                         self.treatments.append(document.documentID)
-                        self.newTreatment[self.i].text = document.documentID
+                        if self.i < 6{
+                            self.newTreatment[self.i].text = document.documentID
+                            self.i = self.i + 1
+                        }
+                        
                         self.progressCounter.text = "\(self.treatments.count)"
-                        self.i = self.i + 1
+                        
                     }
                 }
             }
@@ -105,6 +112,8 @@ class profileViewController: UIViewController {
                 destination.treatments = treatments
                 print(treatments)
                 destination.treatCount = countTreatments
+                destination.loadFirstTime = loadTreatments
+                destination.username = userName
                 print("Going to contacts count: \(countTreatments)")
             }
         }

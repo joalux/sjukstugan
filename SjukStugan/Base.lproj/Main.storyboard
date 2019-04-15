@@ -248,10 +248,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gas-wW-J5g">
-                                <rect key="frame" x="13" y="135" width="178" height="218"/>
+                                <rect key="frame" x="13" y="135" width="200" height="218"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l67-CG-6bf">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="PJa-29-d6Z"/>
                                         </constraints>
@@ -260,7 +260,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ln-Yp-9sb">
-                                        <rect key="frame" x="0.0" y="39" width="178" height="23"/>
+                                        <rect key="frame" x="0.0" y="39" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="f6q-dx-nZK"/>
                                         </constraints>
@@ -269,7 +269,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8s-9n-c3g">
-                                        <rect key="frame" x="0.0" y="78" width="178" height="23"/>
+                                        <rect key="frame" x="0.0" y="78" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="38c-xA-vXt"/>
                                         </constraints>
@@ -278,7 +278,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbJ-y3-vW1">
-                                        <rect key="frame" x="0.0" y="117" width="178" height="23"/>
+                                        <rect key="frame" x="0.0" y="117" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="Ezf-xf-Juc"/>
                                         </constraints>
@@ -287,7 +287,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zot-B9-OCh">
-                                        <rect key="frame" x="0.0" y="156" width="178" height="23"/>
+                                        <rect key="frame" x="0.0" y="156" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="KR5-Lq-yto"/>
                                         </constraints>
@@ -296,7 +296,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqh-jC-IpP">
-                                        <rect key="frame" x="0.0" y="195" width="178" height="23"/>
+                                        <rect key="frame" x="0.0" y="195" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="tS1-qd-rtJ"/>
                                         </constraints>
@@ -305,6 +305,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KHG-ZX-nfP"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senaste behandlingar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-d5-bUl">
                                 <rect key="frame" x="12" y="64" width="194" height="62.5"/>
@@ -330,13 +333,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Oi-a2k">
-                                <rect key="frame" x="234" y="140" width="99" height="106"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-Mh-kD0">
+                                <rect key="frame" x="204" y="105" width="136" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiC-3d-1sg">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="0Rc-bE-6Yt"/>
+                                            <constraint firstAttribute="height" constant="95" id="mC6-n5-CiP"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Avklarade behandlingar ">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Oi-a2k">
+                                        <rect key="frame" x="22.5" y="97" width="91.5" height="43"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <font key="NSFont" size="36" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -356,7 +386,6 @@
                             <constraint firstItem="6T9-5B-fIP" firstAttribute="trailing" secondItem="reN-cI-d5Z" secondAttribute="trailing" constant="80" id="gqC-ad-Bwr"/>
                             <constraint firstItem="LnF-rS-nAi" firstAttribute="leading" secondItem="RO7-Ht-aSg" secondAttribute="leading" id="hal-D7-AIw"/>
                             <constraint firstItem="reN-cI-d5Z" firstAttribute="leading" secondItem="6T9-5B-fIP" secondAttribute="leading" constant="79" id="igz-45-bDs"/>
-                            <constraint firstItem="6T9-5B-fIP" firstAttribute="trailing" secondItem="Gas-wW-J5g" secondAttribute="trailing" constant="184" id="jVx-O5-7SP"/>
                             <constraint firstItem="Gas-wW-J5g" firstAttribute="leading" secondItem="znH-mC-Qqx" secondAttribute="leading" constant="-7" id="rL9-Y8-Rfl"/>
                             <constraint firstItem="dwV-7i-Wek" firstAttribute="top" secondItem="6T9-5B-fIP" secondAttribute="top" id="spz-AY-PbU"/>
                             <constraint firstItem="reN-cI-d5Z" firstAttribute="top" secondItem="6T9-5B-fIP" secondAttribute="top" id="ujA-ul-IcA"/>
@@ -375,6 +404,7 @@
                         <outlet property="divider" destination="LnF-rS-nAi" id="Pbn-b2-t6f"/>
                         <outlet property="nameLabel" destination="reN-cI-d5Z" id="ohW-WH-cB2"/>
                         <outlet property="progressCounter" destination="UJr-Oi-a2k" id="Ewf-0n-N2l"/>
+                        <outlet property="totTreatmentsLabel" destination="UiC-3d-1sg" id="pj1-90-xUi"/>
                         <outletCollection property="bokningar" destination="Gas-wW-J5g" collectionClass="NSMutableArray" id="kPr-PB-icZ"/>
                         <outletCollection property="newTreatment" destination="l67-CG-6bf" collectionClass="NSMutableArray" id="ocT-9l-A0a"/>
                         <outletCollection property="newTreatment" destination="5Ln-Yp-9sb" collectionClass="NSMutableArray" id="OPg-1b-gOA"/>
@@ -520,6 +550,7 @@
                     </tableView>
                     <connections>
                         <outlet property="addMedPop" destination="MeW-Fv-gHF" id="bPx-AH-0MS"/>
+                        <outlet property="countMeds" destination="egJ-D5-7RH" id="Zwm-Q1-Dn0"/>
                         <outlet property="medList" destination="KLT-XS-Ot6" id="v2U-Gd-AYj"/>
                         <outlet property="medStepper" destination="enZ-CS-SiV" id="EpG-fg-GKm"/>
                         <outlet property="newMedTextField" destination="9ob-Gq-Nnp" id="X8K-ZG-kmV"/>
