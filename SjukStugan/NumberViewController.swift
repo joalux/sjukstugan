@@ -59,7 +59,7 @@ class NumberViewController: UITableViewController {
             print("nytt inlägg \(newPost)")
             treatments.append(newPost)
             
-            db.collection("users").document("m@mail.com").collection("behandlingar").document("\(newPost)").setData(data)
+            db.collection("users").document("\(username)").collection("behandlingar").document("\(newPost)").setData(data)
 
             
     
@@ -97,7 +97,7 @@ class NumberViewController: UITableViewController {
         
         
         
-        let docRef = db.collection("treatments").document("SF")
+        //let docRef = db.collection("treatments").document("SF")
         
        /* docRef.getDocument { (document, error) in
             if let document = document, document.exists {

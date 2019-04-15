@@ -236,7 +236,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="oR5-QG-Wqt" kind="show" id="y2G-Ex-8ml"/>
+                                            <segue destination="oR5-QG-Wqt" kind="show" identifier="toMedicine" id="y2G-Ex-8ml"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zj1-85-EEt">
@@ -522,7 +522,7 @@
                                 <navigationItem title="Mina mediciner" id="kNz-IE-wsf">
                                     <barButtonItem key="leftBarButtonItem" title="❮ Tillbaka" id="f9h-UC-d6P">
                                         <connections>
-                                            <segue destination="v8r-2p-hJg" kind="show" id="UKW-O3-8cR"/>
+                                            <segue destination="v8r-2p-hJg" kind="show" identifier="backToStart" id="UKW-O3-8cR"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="dD7-bN-HOZ">
@@ -980,6 +980,6 @@
         <image name="sjukstugan" width="372.41378784179688" height="352.55172729492188"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gp6-n2-Dyv"/>
+        <segue reference="UKW-O3-8cR"/>
     </inferredMetricsTieBreakers>
 </document>

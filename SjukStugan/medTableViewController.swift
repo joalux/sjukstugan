@@ -17,13 +17,17 @@ class medTableViewController: UITableViewController {
     @IBOutlet var medList: UITableView!
     @IBOutlet weak var countMeds: UILabel!
     
+    var treatments: [String] = []
+
     let data: [String: Any] = [:]
     var db: Firestore!
     var meds: [String] = []
     var newPost = "test"
     var antMeds = 0
+    var treatCount = 0
     var stepperValue: Double = 0.0
-    
+    var username = ""
+    var loadFirstTime = false
     
     
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
@@ -33,6 +37,9 @@ class medTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
+        
+        
+        medList.reloadData()
     
        
     }
@@ -46,6 +53,7 @@ class medTableViewController: UITableViewController {
         addMedPop.layer.borderWidth = 3.0
         addMedPop.center = self.view.center
     }
+    
    
     @IBAction func addNewMeds(_ sender: UIButton) {
         
@@ -57,7 +65,14 @@ class medTableViewController: UITableViewController {
         let post = meds[meds.count-1]
         print("!!!!!:)")
         print(post)
-        db.collection("medicine").document(post).setData(data)
+        print("Username is: \(username)")
+        
+        db.collection("users").document("\(username)").collection("mediciner").document("\(post)").setData(data)
+        
+        
+        
+        //db.collection("users").document("\(username)").collection("mediciner").document("\(post)").setData(data)
+
         
         newMedTextField.text = ""
        self.tableView.reloadData()
@@ -108,10 +123,21 @@ class medTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            print("removed")
+            print(meds[indexPath.row])
+            db.collection("users").document(username).collection("mediciner").document(meds[indexPath.row]).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            
             meds.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-            print(meds)
+            
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -142,5 +168,20 @@ class medTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToStart" {
+            
+            print(treatments)
+            print("Going to start totTreatments: \(treatCount)")
+            if let destination = segue.destination as? profileViewController {
+                destination.countTreatments = treatCount
+                destination.treatments = treatments
+                destination.userName = username
+                destination.loadTreatments = loadFirstTime
+            }
+            
+        }
+    }
+    
 
 }

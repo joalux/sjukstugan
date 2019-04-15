@@ -23,6 +23,7 @@ class profileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     var treatments: [String] = []
+    var meds: [String] = []
     var timer: Timer!
     var countTreatments = 0
     var i = 0
@@ -59,12 +60,21 @@ class profileViewController: UIViewController {
                     }
                 }
             }
+            
+            datab.collection("users").document(userName).collection("mediciner").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        self.meds.append(document.documentID)
+                        
+                    }
+                }
+            }
             loadTreatments = true
             
         }
-  
-    
-        
 
         countTreatments = treatments.count
         progressCounter.text = "\(countTreatments)"
@@ -118,10 +128,14 @@ class profileViewController: UIViewController {
             }
         }
         if segue.identifier == "toMedicine"  {
-            if let destination = segue.destination as? medicinerViewController {
+            
+            if let destination = segue.destination as? medTableViewController {
                 destination.treatments = treatments
-                print(treatments)
+                //print(treatments)
+                destination.meds = meds
+                destination.loadFirstTime = loadTreatments
                 destination.treatCount = countTreatments
+                destination.username = userName
                 print("Going to medicine count: \(countTreatments)")
             }
         }
