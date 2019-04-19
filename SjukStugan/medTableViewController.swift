@@ -173,11 +173,13 @@ class medTableViewController: UITableViewController {
             
             print(treatments)
             print("Going to start totTreatments: \(treatCount)")
+            print(meds)
             if let destination = segue.destination as? profileViewController {
                 destination.countTreatments = treatCount
-                destination.treatments = treatments
+                //destination.treatments = treatments
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
+                destination.meds = meds
             }
             
         }

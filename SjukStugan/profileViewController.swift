@@ -22,7 +22,8 @@ class profileViewController: UIViewController {
     @IBOutlet var bokningar: [UIStackView]!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var treatments: [String] = []
+    var treatments: [Treatment] = []
+    var docRefs: [String] = []
     var meds: [String] = []
     var timer: Timer!
     var countTreatments = 0
@@ -31,79 +32,73 @@ class profileViewController: UIViewController {
     var loadTreatments = false
     let data: [String: Any] = [:]
     //var label: UILabel
+   
 
     override func viewDidLoad() {
+        print(treatments)
+        super.viewDidLoad()
         progressCounter.text = ""
         nameLabel.text = userName
         totTreatmentsLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         totTreatmentsLabel.text = "Avklarade \n behandlingar"
         datab = Firestore.firestore()
-        print("is in profile")
-        print(treatments)
-        //newTreatment[0].text = userName
+        
         print("load is = \(loadTreatments)")
-        if loadTreatments == false {
-            datab.collection("users").document(userName).collection("behandlingar").getDocuments() { (querySnapshot, err) in
+       // if loadTreatments == false {
+            print("loading treats")
+           
+            datab.collection("users").document(userName).collection("treatments").getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                        self.treatments.append(document.documentID)
-                        if self.i < 6{
-                            self.newTreatment[self.i].text = document.documentID
-                            self.i = self.i + 1
+       
+                        var docID = document.documentID
+                        
+                        
+                        var newTreat = Treatment(snapshot: document)
+                        print("new treatment id------------------------")
+                        print(docID)
+                        self.docRefs.append(docID)
+                        
+                        print("docrefs------------------------")
+                        print(self.docRefs)
+                        
+                        
+                        let formatter = DateFormatter()
+                        
+                        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+                        
+                        let myString = formatter.string(from: Date())
+                        //print("Dateformat string \(myString)")
+                        
+                        print("new treatment-------- \(newTreat.name)")
+                        if(self.i < 6){
+                            let myString = formatter.string(from: newTreat.date)
+                            self.newTreatment[self.i].text = "\(newTreat.name) \n \(myString)"
+                        }
+                        if self.loadTreatments == false {
+                            print("loading treats")
+                            self.treatments.append(newTreat)
                         }
                         
+                        print("treatments arrayen")
+                        print(self.treatments)
                         self.progressCounter.text = "\(self.treatments.count)"
-                        
+                        self.i = self.i + 1
                     }
                 }
             }
             
-            datab.collection("users").document(userName).collection("mediciner").getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                        self.meds.append(document.documentID)
-                        
-                    }
-                }
-            }
-            loadTreatments = true
+        
             
-        }
+        
 
-        countTreatments = treatments.count
-        progressCounter.text = "\(countTreatments)"
-       countTreatments = countTreatments - 1
-                if treatments.count > 0{
-                    if treatments.count > 5 {
-                        for i in 0...5{
-                            newTreatment[i].text = treatments[countTreatments]
-                            countTreatments = countTreatments - 1
-                        }
-                    }
-                    else {
-                        for i in 0...countTreatments{
-                            newTreatment[i].text = treatments[countTreatments]
-                            countTreatments = countTreatments - 1
-                        }
-                    }
-            
-        }
-        
-        super.viewDidLoad()
-        
+
         view.bringSubviewToFront(divider)
         view.bringSubviewToFront(diagnosLabel)
         
    }
-
-
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -115,6 +110,9 @@ class profileViewController: UIViewController {
                 destination.treatCount = countTreatments
                 destination.username = userName
                 print("Going to treatments count: \(countTreatments)")
+                loadTreatments = true
+                destination.loadFirstTime = loadTreatments
+                destination.docRefs = docRefs
             }
         }
         if segue.identifier == "toContacts"  {
@@ -130,12 +128,12 @@ class profileViewController: UIViewController {
         if segue.identifier == "toMedicine"  {
             
             if let destination = segue.destination as? medTableViewController {
-                destination.treatments = treatments
-                //print(treatments)
+                
                 destination.meds = meds
                 destination.loadFirstTime = loadTreatments
                 destination.treatCount = countTreatments
                 destination.username = userName
+                
                 print("Going to medicine count: \(countTreatments)")
             }
         }

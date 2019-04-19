@@ -66,7 +66,7 @@ class medicinerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backToMain" {
             if let destination = segue.destination as? profileViewController {
-                destination.treatments = treatments
+                //destination.treatments = treatments
                 
                 print(treatments)
                 destination.countTreatments = treatCount

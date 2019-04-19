@@ -15,7 +15,7 @@ class contactsViewController: UIViewController {
     @IBOutlet var cityButtons: [UIButton]!
     
     var treatCount = 0
-    var treatments: [String] = []
+    var treatments: [Treatment] = []
     var loadFirstTime = false
     var username = ""
 
@@ -105,7 +105,7 @@ class contactsViewController: UIViewController {
             
             if let destination = segue.destination as? profileViewController {
                 destination.countTreatments = treatCount
-                destination.treatments = treatments
+                //destination.treatments = treatments
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
             }

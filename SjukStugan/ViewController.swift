@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     
    // let data: [String: Any] = ["]
      var treatments: [String] = []
+    var usersArray: [String] = []
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     
     
@@ -49,10 +50,7 @@ class ViewController: UIViewController {
                 if (error == nil) {
                     print("created user")
                     self.datab.collection("users").document("\(newName)").setData(data)
-                    //self.datab.collection("users").document("\(newName)").collection("behandlingar").document("(mr").setData(data)
-
-                  
-
+                    
                     print(newName)
                     
                 } else {
@@ -71,8 +69,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-            
-        
         
         Auth.auth().signIn(withEmail: userName.text!, password: password.text!) { (user, error) in
             if error == nil{
@@ -103,32 +99,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        super.viewDidLoad()
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy/MM/dd"
         
-        datab = Firestore.firestore()
-        
-        let data: [String: Any] = [:]
-        var treatments: [String] = []
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        print("Dateformat string \(myString)")
+        // convert your string to date
+        let yourDate = formatter.date(from: myString)
+        print("date is formatted \(yourDate)")
 
-        datab.collection("users").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
-            }
-        }
         
-        datab.collection("users").addSnapshotListener {
-            documentSnapShot, error in
-            
-            for document in (documentSnapShot?.documents)! {
-                print(document["behandling"])
-                
-            }
-        }
+         datab = Firestore.firestore()
+       
         
+        super.viewDidLoad()
+       
+        
+       // let data: [String: Any] = [:]
+       // var treatments: [String] = []
+
+       
                 // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -137,25 +128,8 @@ class ViewController: UIViewController {
         if segue.identifier == "loginToHome" {
             if let destination = segue.destination as? profileViewController {
                 
-                /*if loadTreatments == false {
-                 datab.collection("users").document(userName).collection("behandlingar").getDocuments() { (querySnapshot, err) in
-                 if let err = err {
-                 print("Error getting documents: \(err)")
-                 } else {
-                 for document in querySnapshot!.documents {
-                 print("\(document.documentID) => \(document.data())")
-                 self.treatments.append(document.documentID)
-                 self.newTreatment[self.i].text = document.documentID
-                 self.progressCounter.text = "\(self.treatments.count)"
-                 self.i = self.i + 1
-                 }
-                 }
-                 }
-                 loadTreatments = true
-                 
-                 }*/
+               
                 
-                destination.treatments = treatments
                 destination.userName = (userName.text)!
                 print("Going to start totTreatments: \(treatments.count)")
                 

@@ -12,7 +12,8 @@ import Firebase
 class NumberViewController: UITableViewController {
     
     var db: Firestore!
-    var treatments: [String] = []
+    var treatments: [Treatment] = []
+    var treatmentList = [Treatment]()
     var i = 0
     var treatCount = 0
     var index = 0
@@ -22,8 +23,9 @@ class NumberViewController: UITableViewController {
     var username = ""
     let data: [String: Any] = [:]
     
+    var docRefs: [String] = []
+    
     @IBOutlet var treatmentsTableView: UITableView!
-    //@IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var newTreatment: UITextField!
     @IBOutlet var popOver: UIView!
     @IBAction func openPopButton(_ sender: UIBarButtonItem) {
@@ -36,38 +38,36 @@ class NumberViewController: UITableViewController {
         
         let date = Date()
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
         
-        let year =  components.year
-        let month = components.month
-        let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        var newPost = "test"
-        //let unwrapped = ""
-         let data: [String: Any] = [:]
-        print("hour \(hour)")
-        
-        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        print("Dateformat string \(myString)")
+        // convert your string to date
+        let yourDate = formatter.date(from: myString)
+        print("date is formatted \(yourDate)")
         
         print(newTreatment.text)
         let test = newTreatment.text
         
         if let unwrapped = test{
             print("unwrappade \(unwrapped)")
-            newPost = "\(hour!):\(minute!)  \(day!)-\(month!)-\(year!) \(unwrapped)"
-            print("nytt inlägg \(newPost)")
-            treatments.append(newPost)
-            
-            db.collection("users").document("\(username)").collection("behandlingar").document("\(newPost)").setData(data)
+        
+            let treat = Treatment(name: unwrapped, date: date)
+            treatments.append(treat)
 
             
-    
+            var ref: DocumentReference? = nil
+
+            ref = db.collection("users").document("\(username)").collection("treatments").addDocument(data: treat.toDictionary()){ err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                    self.docRefs.append(ref!.documentID)
+                }
+            }
         }
-        
-        
-        let post = treatments[treatments.count-1]
-        print("!!!!!: \(post)")
         
         self.popOver.removeFromSuperview()
         treatCount = 1 + treatCount
@@ -77,8 +77,27 @@ class NumberViewController: UITableViewController {
     }
  
     override func viewDidLoad() {
-        print("username \(username)")
+        
         let date = Date()
+        print("Docrefs")
+        print(docRefs)
+       
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy/MM/dd"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        print("Dateformat string \(myString)")
+        // convert your string to date
+        let yourDate = formatter.date(from: myString)
+        print("date is formatted \(yourDate)")
+
+        print("----------------------------------")
+        print("username \(username)")
+         db = Firestore.firestore()
+        
+        let itemsRef = db.collection("users").document("\(username)").collection("behandlingar")
+        
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: date)
         
@@ -91,31 +110,14 @@ class NumberViewController: UITableViewController {
         print(month!)
         print(day!)
         
-        
-        db = Firestore.firestore()
-        //print("treatments Arrayen from start \(treatments)")
-        
-        
-        
-        //let docRef = db.collection("treatments").document("SF")
-        
-       /* docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }*/
+      
         
 
-        print("treatments arrayen \(treatments)")
         super.viewDidLoad()
         
         self.popOver.layer.cornerRadius = 10
-        //self.popOver.backgroundColor = UIColor.lightGray
         
-        //tableView.backgroundColor = UIColor.gray
+        
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         //tableView.separatorColor = UIColor.black
         
@@ -143,7 +145,8 @@ class NumberViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = treatments[indexPath.row]
+        
+        cell.textLabel?.text = "\(treatments[indexPath.row].name) \(treatments[indexPath.row].date)"
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -153,8 +156,11 @@ class NumberViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            print("deleting document")
             
-            db.collection("treatments").document("\(treatments[indexPath.row])").delete() { err in
+            print(treatments[indexPath.row].name)
+            print(docRefs[indexPath.row])
+            db.collection("users").document("\(username)").collection("treatments").document(docRefs[indexPath.row]).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
