@@ -16,6 +16,7 @@ class contactsViewController: UIViewController {
     
     var treatCount = 0
     var treatments: [Treatment] = []
+    var docRefs: [String] = []
     var loadFirstTime = false
     var username = ""
 
@@ -105,9 +106,10 @@ class contactsViewController: UIViewController {
             
             if let destination = segue.destination as? profileViewController {
                 destination.countTreatments = treatCount
-                //destination.treatments = treatments
+                destination.treatments = treatments
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
+                destination.docRefs = docRefs
             }
             print(treatments)
             print("Going to start totTreatments: \(treatCount)")

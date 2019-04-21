@@ -236,6 +236,7 @@ class NumberViewController: UITableViewController {
                 destination.treatments = treatments
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
+                destination.docRefs = docRefs
             }
            
         }

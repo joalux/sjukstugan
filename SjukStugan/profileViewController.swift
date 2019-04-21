@@ -117,12 +117,17 @@ class profileViewController: UIViewController {
         }
         if segue.identifier == "toContacts"  {
             if let destination = segue.destination as? contactsViewController {
+                
+                destination.loadFirstTime = loadTreatments
                 destination.treatments = treatments
                 print(treatments)
                 destination.treatCount = countTreatments
-                destination.loadFirstTime = loadTreatments
                 destination.username = userName
-                print("Going to contacts count: \(countTreatments)")
+                print("Going to treatments count: \(countTreatments)")
+                loadTreatments = true
+                destination.loadFirstTime = loadTreatments
+                destination.docRefs = docRefs
+                
             }
         }
         if segue.identifier == "toMedicine"  {
