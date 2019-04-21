@@ -17,11 +17,15 @@ class medTableViewController: UITableViewController {
     @IBOutlet var medList: UITableView!
     @IBOutlet weak var countMeds: UILabel!
     
-    var treatments: [String] = []
-
+    
+    var treatments: [Treatment] = []
+    //var medicineList = [Medicine]()
+    var docRefs: [String] = []
+     var medRefs: [String] = []
+    var meds: [Medicine] = []
+    
     let data: [String: Any] = [:]
     var db: Firestore!
-    var meds: [String] = []
     var newPost = "test"
     var antMeds = 0
     var treatCount = 0
@@ -37,11 +41,13 @@ class medTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
-        
-        
-        medList.reloadData()
-    
+        print("is in medicines")
+        print (meds)
        
+         self.tableView.reloadData()
+        
+      
+    
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,25 +62,29 @@ class medTableViewController: UITableViewController {
     
    
     @IBAction func addNewMeds(_ sender: UIButton) {
-        
+       
         if let unwrapped = newMedTextField.text{
             print("unwrapped \(unwrapped) \(antMeds)")
-            newPost = "\(unwrapped) \(antMeds) st "
-             meds.append(newPost)
+            
+            let newMed =  Medicine(name: unwrapped, amount: antMeds)
+            meds.append(newMed)
+            //medicineList.append(newMed)
+            
+        var ref: DocumentReference? = nil
+        
+        ref = db.collection("users").document("\(username)").collection("mediciner").addDocument(data: newMed.toDictionary() ) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                self.medRefs.append(ref!.documentID)
+            }
         }
-        let post = meds[meds.count-1]
-        print("!!!!!:)")
-        print(post)
-        print("Username is: \(username)")
+        }
         
-        db.collection("users").document("\(username)").collection("mediciner").document("\(post)").setData(data)
-        
-        
-        
-        //db.collection("users").document("\(username)").collection("mediciner").document("\(post)").setData(data)
-
         
         newMedTextField.text = ""
+        medStepper.value = 0
        self.tableView.reloadData()
         self.addMedPop.removeFromSuperview()
     }
@@ -102,30 +112,26 @@ class medTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = meds[indexPath.row]
-        // Configure the cell...
-        
+        cell.textLabel?.text = "\(meds[indexPath.row].name) \(meds[indexPath.row].amount)"
 
         return cell
     }
      
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("removed")
-            print(meds[indexPath.row])
-            db.collection("users").document(username).collection("mediciner").document(meds[indexPath.row]).delete() { err in
+            print(meds[indexPath.row].name)
+            db.collection("users").document(username).collection("mediciner").document(medRefs[indexPath.row]).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
@@ -176,10 +182,13 @@ class medTableViewController: UITableViewController {
             print(meds)
             if let destination = segue.destination as? profileViewController {
                 destination.countTreatments = treatCount
-                //destination.treatments = treatments
+                destination.treatments = treatments
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
+                destination.docRefs = docRefs
+                destination.medRefs = medRefs
                 destination.meds = meds
+                
             }
             
         }

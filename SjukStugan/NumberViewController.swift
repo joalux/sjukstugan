@@ -24,6 +24,7 @@ class NumberViewController: UITableViewController {
     let data: [String: Any] = [:]
     
     var docRefs: [String] = []
+   
     
     @IBOutlet var treatmentsTableView: UITableView!
     @IBOutlet weak var newTreatment: UITextField!
@@ -37,17 +38,16 @@ class NumberViewController: UITableViewController {
     @IBAction func doneButton(_ sender: UIButton) {
         
         let date = Date()
-        let calendar = Calendar.current
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         
-        let myString = formatter.string(from: Date()) // string purpose I add here
+        let myString = formatter.string(from: Date())
         print("Dateformat string \(myString)")
         // convert your string to date
         let yourDate = formatter.date(from: myString)
-        print("date is formatted \(yourDate)")
+        //print("date is formatted \(yourDate)")
         
-        print(newTreatment.text)
+        //print(newTreatment.text)
         let test = newTreatment.text
         
         if let unwrapped = test{
@@ -79,21 +79,13 @@ class NumberViewController: UITableViewController {
     override func viewDidLoad() {
         
         let date = Date()
-        print("Docrefs")
-        print(docRefs)
-       
+        
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "yyyy/MM/dd"
         
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        print("Dateformat string \(myString)")
-        // convert your string to date
-        let yourDate = formatter.date(from: myString)
-        print("date is formatted \(yourDate)")
-
-        print("----------------------------------")
-        print("username \(username)")
+        let myString = formatter.string(from: Date())
+        
          db = Firestore.firestore()
         
         let itemsRef = db.collection("users").document("\(username)").collection("behandlingar")
@@ -104,13 +96,6 @@ class NumberViewController: UITableViewController {
         let year =  components.year
         let month = components.month
         let day = components.day
-        
-        print("dagar, månad, år")
-        print(year!)
-        print(month!)
-        print(day!)
-        
-      
         
 
         super.viewDidLoad()
@@ -127,7 +112,6 @@ class NumberViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    // Add a new document with a generated ID
     
     // MARK: - Table view data source
     

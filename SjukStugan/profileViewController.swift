@@ -24,7 +24,8 @@ class profileViewController: UIViewController {
     
     var treatments: [Treatment] = []
     var docRefs: [String] = []
-    var meds: [String] = []
+    var meds: [Medicine] = []
+    var medRefs: [String] = []
     var timer: Timer!
     var countTreatments = 0
     var i = 0
@@ -44,10 +45,7 @@ class profileViewController: UIViewController {
         datab = Firestore.firestore()
         
         print("load is = \(loadTreatments)")
-       // if loadTreatments == false {
-            print("loading treats")
-           
-            datab.collection("users").document(userName).collection("treatments").getDocuments() { (querySnapshot, err) in
+      datab.collection("users").document(userName).collection("treatments").getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
@@ -55,42 +53,50 @@ class profileViewController: UIViewController {
        
                         var docID = document.documentID
                         
-                        
                         var newTreat = Treatment(snapshot: document)
-                        print("new treatment id------------------------")
-                        print(docID)
+                        
                         self.docRefs.append(docID)
-                        
-                        print("docrefs------------------------")
-                        print(self.docRefs)
-                        
                         
                         let formatter = DateFormatter()
                         
                         formatter.dateFormat = "yyyy-MM-dd HH:mm"
                         
                         let myString = formatter.string(from: Date())
-                        //print("Dateformat string \(myString)")
                         
-                        print("new treatment-------- \(newTreat.name)")
                         if(self.i < 6){
                             let myString = formatter.string(from: newTreat.date)
                             self.newTreatment[self.i].text = "\(newTreat.name) \n \(myString)"
                         }
                         if self.loadTreatments == false {
-                            print("loading treats")
                             self.treatments.append(newTreat)
                         }
                         
-                        print("treatments arrayen")
-                        print(self.treatments)
                         self.progressCounter.text = "\(self.treatments.count)"
                         self.i = self.i + 1
                     }
                 }
             }
             
-        
+        datab.collection("users").document(userName).collection("mediciner").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    var docID = document.documentID
+                    
+                    var newMed = Medicine(snapshot: document)
+                    
+                    self.medRefs.append(docID)
+                    if self.loadTreatments == false {
+                        self.meds.append(newMed)
+                    }
+               
+                    
+                }
+                //print("mediciner arrayen \(self.meds)")
+            }
+        }
             
         
 
@@ -123,7 +129,6 @@ class profileViewController: UIViewController {
                 print(treatments)
                 destination.treatCount = countTreatments
                 destination.username = userName
-                print("Going to treatments count: \(countTreatments)")
                 loadTreatments = true
                 destination.loadFirstTime = loadTreatments
                 destination.docRefs = docRefs
@@ -134,12 +139,17 @@ class profileViewController: UIViewController {
             
             if let destination = segue.destination as? medTableViewController {
                 
-                destination.meds = meds
+                print("Going to medicines")
+                
                 destination.loadFirstTime = loadTreatments
+                destination.treatments = treatments
+                destination.meds = meds
                 destination.treatCount = countTreatments
                 destination.username = userName
-                
-                print("Going to medicine count: \(countTreatments)")
+                loadTreatments = true
+                destination.loadFirstTime = loadTreatments
+                destination.docRefs = docRefs
+                destination.medRefs = medRefs
             }
         }
         if segue.identifier == "logOut" {

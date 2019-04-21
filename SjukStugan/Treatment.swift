@@ -30,6 +30,4 @@ class Treatment {
         return ["name": name,
                 "date": date]
     }
-    
-    
 }

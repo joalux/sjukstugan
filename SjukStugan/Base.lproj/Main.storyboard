@@ -59,14 +59,14 @@
                                     <action selector="openSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a72-ye-9Y3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gå in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixh-O5-9NY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixh-O5-9NY">
                                 <rect key="frame" x="135" y="543" width="105" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skapa konto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAK-8n-unM">
-                                <rect key="frame" x="131" y="590" width="113" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAK-8n-unM">
+                                <rect key="frame" x="120" y="590" width="149" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -104,14 +104,14 @@
                             <constraint firstItem="HAK-8n-unM" firstAttribute="top" secondItem="Ixh-O5-9NY" secondAttribute="bottom" constant="11" id="V8m-Pw-3cK"/>
                             <constraint firstItem="D1N-ga-Snm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="VPJ-qN-Kg4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iyy-aq-nb1" secondAttribute="trailing" constant="84" id="WRT-pK-4Qh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HAK-8n-unM" secondAttribute="trailing" constant="131" id="YGj-AG-DAE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HAK-8n-unM" secondAttribute="trailing" constant="106" id="YGj-AG-DAE"/>
                             <constraint firstItem="kc2-xP-1gE" firstAttribute="top" secondItem="RuL-jS-bHm" secondAttribute="bottom" constant="5" id="eaq-sx-jij"/>
                             <constraint firstItem="kc2-xP-1gE" firstAttribute="top" secondItem="Ixh-O5-9NY" secondAttribute="bottom" constant="3" id="fTI-bM-JS9"/>
                             <constraint firstItem="RuL-jS-bHm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="fbX-Zq-BAy"/>
                             <constraint firstItem="UMG-J6-gDk" firstAttribute="trailing" secondItem="RuL-jS-bHm" secondAttribute="trailing" id="gzz-no-ioC"/>
                             <constraint firstItem="kc2-xP-1gE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="hoE-G5-g8z"/>
                             <constraint firstItem="UMG-J6-gDk" firstAttribute="centerX" secondItem="Ixh-O5-9NY" secondAttribute="centerX" id="nm5-BX-ysw"/>
-                            <constraint firstItem="HAK-8n-unM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="131" id="oZa-Vw-4vI"/>
+                            <constraint firstItem="HAK-8n-unM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="oZa-Vw-4vI"/>
                             <constraint firstItem="D1N-ga-Snm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67.5" id="p42-Px-FbI"/>
                             <constraint firstItem="UMG-J6-gDk" firstAttribute="leading" secondItem="RuL-jS-bHm" secondAttribute="leading" id="rGx-Ft-Jzb"/>
                             <constraint firstItem="yIn-EL-JNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="rkp-c5-fyT"/>
@@ -140,20 +140,20 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1U-0G-rqk">
-                            <rect key="frame" x="114" y="38" width="118" height="30"/>
+                            <rect key="frame" x="123" y="38" width="109" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0n-L5-CRA">
-                            <rect key="frame" x="114" y="79" width="118" height="30"/>
+                            <rect key="frame" x="123" y="79" width="109" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ny användare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbT-zl-Nmi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbT-zl-Nmi">
                             <rect key="frame" x="16" y="9" width="118" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -161,16 +161,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKk-NW-gTG">
-                            <rect key="frame" x="9" y="38" width="97" height="30"/>
+                            <rect key="frame" x="9" y="38" width="106" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppc-uS-e1W">
-                            <rect key="frame" x="16" y="78" width="90" height="30"/>
+                            <rect key="frame" x="9" y="78" width="106" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Skapa konto"/>
+                            <state key="normal" title="Create account"/>
                             <connections>
                                 <action selector="createUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPf-a4-cSu"/>
                             </connections>
@@ -179,7 +179,7 @@
                             <rect key="frame" x="142" y="7" width="82" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Avbryt"/>
+                            <state key="normal" title="Cansel"/>
                             <connections>
                                 <action selector="closeSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYo-Kh-sjp"/>
                             </connections>
@@ -200,11 +200,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="znH-mC-Qqx">
-                                <rect key="frame" x="20" y="439" width="116" height="147"/>
+                                <rect key="frame" x="20" y="439" width="107" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9m-1L-8SB">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
-                                        <state key="normal" title="- Behandlingar">
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
+                                        <state key="normal" title="- Treatments">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -212,8 +212,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxy-4r-7Rd">
-                                        <rect key="frame" x="0.0" y="39" width="116" height="30"/>
-                                        <state key="normal" title="- Vårdkontakter">
+                                        <rect key="frame" x="0.0" y="39" width="107" height="30"/>
+                                        <state key="normal" title="- Care contacts">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -221,19 +221,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xS8-lV-tIc">
-                                        <rect key="frame" x="0.0" y="78" width="116" height="30"/>
-                                        <state key="normal" title="- Mina mediciner">
+                                        <rect key="frame" x="0.0" y="78" width="107" height="30"/>
+                                        <state key="normal" title="- My medicines">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="oR5-QG-Wqt" kind="show" identifier="toMedicine" id="y2G-Ex-8ml"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zj1-85-EEt">
-                                        <rect key="frame" x="0.0" y="117" width="116" height="30"/>
-                                        <state key="normal" title="- Tips och råd">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -303,8 +297,8 @@
                                     <constraint firstAttribute="width" constant="228" id="KHG-ZX-nfP"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senaste behandlingar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-d5-bUl">
-                                <rect key="frame" x="12" y="66" width="194" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest treatments" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-d5-bUl">
+                                <rect key="frame" x="12" y="66" width="158.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -313,7 +307,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="XXO-Fr-NiN">
-                                        <barButtonItem key="leftBarButtonItem" title="❮ Gå ut" id="ZAe-iI-Rah">
+                                        <barButtonItem key="leftBarButtonItem" title="❮ Go out" id="ZAe-iI-Rah">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" identifier="logOut" id="vIR-CG-Huc"/>
                                             </connections>
@@ -338,7 +332,7 @@
                                             <constraint firstAttribute="height" constant="95" id="mC6-n5-CiP"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Avklarade behandlingar ">
+                                            <fragment content="Finished treatments">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -433,8 +427,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Behandlingar" id="bEI-hL-E9Q">
-                                    <barButtonItem key="leftBarButtonItem" title="❮Tillbaka" id="KW2-Lp-fG8">
+                                <navigationItem title="Treatments" id="bEI-hL-E9Q">
+                                    <barButtonItem key="leftBarButtonItem" title="❮ back" id="KW2-Lp-fG8">
                                         <connections>
                                             <segue destination="v8r-2p-hJg" kind="show" identifier="backToStart" id="v8v-mx-LVX"/>
                                         </connections>
@@ -482,21 +476,21 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZe-cm-1GP">
-                            <rect key="frame" x="93" y="98" width="54" height="30"/>
+                            <rect key="frame" x="105" y="98" width="30" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Lägg till"/>
+                            <state key="normal" title="Add"/>
                             <connections>
                                 <action selector="doneButton:" destination="Nlo-ZX-lP0" eventType="touchUpInside" id="DcD-RJ-PDG"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ny behandling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP2-D8-uax">
-                            <rect key="frame" x="65" y="0.0" width="111" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New treatments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP2-D8-uax">
+                            <rect key="frame" x="65" y="0.0" width="122" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Ny behandling" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Y2-hq-plh">
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="New treatment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Y2-hq-plh">
                             <rect key="frame" x="16" y="42" width="208" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
@@ -522,8 +516,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Mina mediciner" id="kNz-IE-wsf">
-                                    <barButtonItem key="leftBarButtonItem" title="❮ Tillbaka" id="f9h-UC-d6P">
+                                <navigationItem title="My medicine" id="kNz-IE-wsf">
+                                    <barButtonItem key="leftBarButtonItem" title="❮ Back" id="f9h-UC-d6P">
                                         <connections>
                                             <segue destination="v8r-2p-hJg" kind="show" identifier="backToStart" id="UKW-O3-8cR"/>
                                         </connections>
@@ -564,14 +558,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ny medicin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-y8-cTF">
-                            <rect key="frame" x="77" y="9" width="86" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New medicine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-y8-cTF">
+                            <rect key="frame" x="77" y="9" width="109" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medicin namn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ob-Gq-Nnp">
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medicine name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ob-Gq-Nnp">
                             <rect key="frame" x="16" y="42" width="147" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
@@ -581,7 +575,7 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c20-YR-rCU">
                             <rect key="frame" x="29" y="80" width="83" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Lägg till"/>
+                            <state key="normal" title="Add new"/>
                             <connections>
                                 <action selector="addNewMeds:" destination="oR5-QG-Wqt" eventType="touchUpInside" id="Y0B-Vf-K9J"/>
                             </connections>
@@ -618,8 +612,8 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-KU-ryj">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Kontakter" id="ivN-JA-tLK">
-                                        <barButtonItem key="leftBarButtonItem" title="❮Tillbaka" id="fSU-uW-PmL">
+                                    <navigationItem title="Contacts" id="ivN-JA-tLK">
+                                        <barButtonItem key="leftBarButtonItem" title="❮ Back" id="fSU-uW-PmL">
                                             <connections>
                                                 <segue destination="v8r-2p-hJg" kind="show" identifier="backToMain" id="UX2-wx-rb2"/>
                                             </connections>
@@ -628,9 +622,9 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbH-4o-BeP">
-                                <rect key="frame" x="16" y="82" width="126" height="30"/>
+                                <rect key="frame" x="16" y="82" width="148" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="- Sjukhus i sverige">
+                                <state key="normal" title="- Hospitals in sweden">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -702,28 +696,28 @@
                                     <constraint firstAttribute="height" constant="30" id="ckU-Qe-ybS"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vårdmottagningar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k83-iG-0s1">
-                                <rect key="frame" x="16" y="129" width="138" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthare centers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k83-iG-0s1">
+                                <rect key="frame" x="16" y="129" width="136" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-Bh-cmW">
-                                <rect key="frame" x="16" y="250" width="129" height="30"/>
-                                <state key="normal" title="- Patientföreningar"/>
+                                <rect key="frame" x="16" y="250" width="148" height="30"/>
+                                <state key="normal" title="- patient associations"/>
                                 <connections>
                                     <action selector="patientforeningar:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="gVV-fn-UKQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-ft-MON">
-                                <rect key="frame" x="16" y="297" width="139" height="30"/>
-                                <state key="normal" title="- Försäkringskassan"/>
+                                <rect key="frame" x="16" y="297" width="179" height="30"/>
+                                <state key="normal" title="- Social Insurance Agency"/>
                                 <connections>
                                     <action selector="forsakringskassan:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="oAr-iX-n3j"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Färdtjänst" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-Sa-L49">
-                                <rect key="frame" x="16" y="344" width="76" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transportation service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-Sa-L49">
+                                <rect key="frame" x="16" y="344" width="168.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -769,8 +763,8 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-uf-TaA">
-                                <rect key="frame" x="16" y="408" width="124" height="30"/>
-                                <state key="normal" title="- 1177 Vårdguiden"/>
+                                <rect key="frame" x="16" y="408" width="171" height="30"/>
+                                <state key="normal" title="- 1177 Medicalcare guide"/>
                                 <connections>
                                     <action selector="vardguiden:" destination="0I1-XJ-tEi" eventType="touchUpInside" id="BkC-nX-SaE"/>
                                 </connections>
@@ -983,6 +977,6 @@
         <image name="sjukstugan" width="372.41378784179688" height="352.55172729492188"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gp6-n2-Dyv"/>
+        <segue reference="UKW-O3-8cR"/>
     </inferredMetricsTieBreakers>
 </document>

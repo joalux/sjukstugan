@@ -14,6 +14,7 @@
 		410E212A2227F14500CB2EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 410E21292227F14500CB2EFF /* Assets.xcassets */; };
 		410E212D2227F14500CB2EFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410E212B2227F14500CB2EFF /* LaunchScreen.storyboard */; };
 		410E21382227F14600CB2EFF /* SjukStuganTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E21372227F14600CB2EFF /* SjukStuganTests.swift */; };
+		4124A71A226C5CFA0097D4B3 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4124A719226C5CFA0097D4B3 /* Medicine.swift */; };
 		41584036225A0F1700BDBB36 /* medicinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41584035225A0F1700BDBB36 /* medicinerViewController.swift */; };
 		4164C1182257692D00A7B168 /* contactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164C1172257692D00A7B168 /* contactsViewController.swift */; };
 		41CBA262224B845500246F59 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CBA261224B845500246F59 /* NumberViewController.swift */; };
@@ -48,6 +49,10 @@
 		410E21332227F14500CB2EFF /* SjukStuganTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjukStuganTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		410E21372227F14600CB2EFF /* SjukStuganTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SjukStuganTests.swift; sourceTree = "<group>"; };
 		410E21392227F14600CB2EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4124A719226C5CFA0097D4B3 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		4124A71D226CC9E50097D4B3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		4124A71E226CC9E70097D4B3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4124A71F226CC9E90097D4B3 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		41584035225A0F1700BDBB36 /* medicinerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = medicinerViewController.swift; sourceTree = "<group>"; };
 		4164C1172257692D00A7B168 /* contactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsViewController.swift; sourceTree = "<group>"; };
 		41CBA261224B845500246F59 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 				41DC44F1225E184B006E03B2 /* SjukStugan.entitlements */,
 				410E21222227F14400CB2EFF /* AppDelegate.swift */,
 				41584035225A0F1700BDBB36 /* medicinerViewController.swift */,
+				4124A719226C5CFA0097D4B3 /* Medicine.swift */,
 				410E21242227F14400CB2EFF /* ViewController.swift */,
 				41CBA2D3224E366400246F59 /* GoogleService-Info.plist */,
 				4101D36722280D6D003A4820 /* profileViewController.swift */,
@@ -219,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = 410E21162227F14400CB2EFF;
 			productRefGroup = 410E21202227F14400CB2EFF /* Products */;
@@ -328,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				410E21252227F14400CB2EFF /* ViewController.swift in Sources */,
+				4124A71A226C5CFA0097D4B3 /* Medicine.swift in Sources */,
 				41584036225A0F1700BDBB36 /* medicinerViewController.swift in Sources */,
 				41CBA262224B845500246F59 /* NumberViewController.swift in Sources */,
 				41DC44F0225B66D0006E03B2 /* medTableViewController.swift in Sources */,
@@ -362,6 +370,7 @@
 			children = (
 				410E21272227F14400CB2EFF /* Base */,
 				41DFB5EF2265D93700DE1CA8 /* en-GB */,
+				4124A71D226CC9E50097D4B3 /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -371,6 +380,7 @@
 			children = (
 				410E212C2227F14500CB2EFF /* Base */,
 				41DFB5F02265D93800DE1CA8 /* en-GB */,
+				4124A71E226CC9E70097D4B3 /* sv */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -379,6 +389,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				41DFB5F42265DD6000DE1CA8 /* en */,
+				4124A71F226CC9E90097D4B3 /* sv */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
