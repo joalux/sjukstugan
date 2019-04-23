@@ -131,6 +131,7 @@ class medTableViewController: UITableViewController {
         if editingStyle == .delete {
             print("removed")
             print(meds[indexPath.row].name)
+            medRefs.remove(at: indexPath.row)
             db.collection("users").document(username).collection("mediciner").document(medRefs[indexPath.row]).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
@@ -140,8 +141,12 @@ class medTableViewController: UITableViewController {
             }
             
             meds.remove(at: indexPath.row)
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+           // tableView.deleteRows(at: [indexPath], with: .fade)
             
             
         } else if editingStyle == .insert {

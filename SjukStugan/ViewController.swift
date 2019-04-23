@@ -31,6 +31,7 @@ class ViewController: UIViewController {
      var treatments: [String] = []
     var usersArray: [String] = []
     var blue = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
+    var loginName = ""
     
     
     @IBAction func openSignUp(_ sender: UIButton) {
@@ -72,7 +73,7 @@ class ViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: userName.text!, password: password.text!) { (user, error) in
             if error == nil{
-                
+                self.loginName = self.userName.text!
                 self.performSegue(withIdentifier: "loginToHome", sender: self)
             }
             else{
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
+            
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,8 +100,24 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                print("User is signed in")
+                print(user)
+                print(user.email)
+                if let unwrapped = user.email {
+                    self.loginName = unwrapped
+                    self.performSegue(withIdentifier: "loginToHome", sender: self)
+                }
+
+            } else {
+                print("No user is signed in")
+            }
+        }
+        
+        
         let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
+        
         formatter.dateFormat = "yyyy/MM/dd"
         
         let myString = formatter.string(from: Date()) // string purpose I add here
@@ -112,15 +129,8 @@ class ViewController: UIViewController {
         
          datab = Firestore.firestore()
        
-        
         super.viewDidLoad()
        
-        
-       // let data: [String: Any] = [:]
-       // var treatments: [String] = []
-
-       
-                // Do any additional setup after loading the view, typically from a nib.
     }
     
     
@@ -128,9 +138,7 @@ class ViewController: UIViewController {
         if segue.identifier == "loginToHome" {
             if let destination = segue.destination as? profileViewController {
                 
-               
-                
-                destination.userName = (userName.text)!
+                destination.userName = loginName
                 print("Going to start totTreatments: \(treatments.count)")
                 
                 

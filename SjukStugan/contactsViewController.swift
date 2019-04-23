@@ -19,13 +19,15 @@ class contactsViewController: UIViewController {
     var docRefs: [String] = []
     var loadFirstTime = false
     var username = ""
+    var medRefs: [String] = []
+    var meds: [Medicine] = []
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("is in contacts _______________")
-        print(treatments)
+        print(meds)
     }
     
     
@@ -110,6 +112,8 @@ class contactsViewController: UIViewController {
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
                 destination.docRefs = docRefs
+                destination.medRefs = medRefs
+                destination.meds = meds
             }
             print(treatments)
             print("Going to start totTreatments: \(treatCount)")

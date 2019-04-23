@@ -24,7 +24,11 @@ class NumberViewController: UITableViewController {
     let data: [String: Any] = [:]
     
     var docRefs: [String] = []
-   
+    var medRefs: [String] = []
+    var meds: [Medicine] = []
+    
+    let date = Date()
+    let formatter = DateFormatter()
     
     @IBOutlet var treatmentsTableView: UITableView!
     @IBOutlet weak var newTreatment: UITextField!
@@ -36,10 +40,6 @@ class NumberViewController: UITableViewController {
         popOver.center = self.view.center
     }
     @IBAction func doneButton(_ sender: UIButton) {
-        
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
         
         let myString = formatter.string(from: Date())
         print("Dateformat string \(myString)")
@@ -78,30 +78,11 @@ class NumberViewController: UITableViewController {
  
     override func viewDidLoad() {
         
-        let date = Date()
-        
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy/MM/dd"
-        
-        let myString = formatter.string(from: Date())
-        
          db = Firestore.firestore()
         
-        let itemsRef = db.collection("users").document("\(username)").collection("behandlingar")
-        
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
-        
-        let year =  components.year
-        let month = components.month
-        let day = components.day
-        
-
         super.viewDidLoad()
         
         self.popOver.layer.cornerRadius = 10
-        
         
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         //tableView.separatorColor = UIColor.black
@@ -129,8 +110,10 @@ class NumberViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let formatDateString = formatter.string(from: treatments[indexPath.row].date)
         
-        cell.textLabel?.text = "\(treatments[indexPath.row].name) \(treatments[indexPath.row].date)"
+        cell.textLabel?.text = "\(treatments[indexPath.row].name) \(formatDateString) "
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -221,6 +204,8 @@ class NumberViewController: UITableViewController {
                 destination.userName = username
                 destination.loadTreatments = loadFirstTime
                 destination.docRefs = docRefs
+                destination.medRefs = medRefs
+                destination.meds = meds
             }
            
         }

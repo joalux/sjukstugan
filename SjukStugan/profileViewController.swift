@@ -21,6 +21,12 @@ class profileViewController: UIViewController {
     @IBOutlet var newTreatment: [UILabel]!
     @IBOutlet var bokningar: [UIStackView]!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var finishedTreatLabel: UILabel!
+    
+    @IBOutlet weak var buttonLink1: UIButton!
+    @IBOutlet weak var buttonLink2: UIButton!
+    @IBOutlet weak var buttonLink3: UIButton!
+    
     
     var treatments: [Treatment] = []
     var docRefs: [String] = []
@@ -33,15 +39,14 @@ class profileViewController: UIViewController {
     var loadTreatments = false
     let data: [String: Any] = [:]
     //var label: UILabel
-   
-
+    
     override func viewDidLoad() {
         print(treatments)
         super.viewDidLoad()
         progressCounter.text = ""
         nameLabel.text = userName
         totTreatmentsLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
-        totTreatmentsLabel.text = "Avklarade \n behandlingar"
+        //totTreatmentsLabel.text = "Finished \n treatments"
         datab = Firestore.firestore()
         
         print("load is = \(loadTreatments)")
@@ -98,7 +103,9 @@ class profileViewController: UIViewController {
             }
         }
             
-        
+        buttonLink1.layer.cornerRadius = 6
+        buttonLink2.layer.cornerRadius = 6
+        buttonLink3.layer.cornerRadius = 6
 
 
         view.bringSubviewToFront(divider)
@@ -119,6 +126,8 @@ class profileViewController: UIViewController {
                 loadTreatments = true
                 destination.loadFirstTime = loadTreatments
                 destination.docRefs = docRefs
+                destination.medRefs = medRefs
+                destination.meds = meds
             }
         }
         if segue.identifier == "toContacts"  {
@@ -132,6 +141,8 @@ class profileViewController: UIViewController {
                 loadTreatments = true
                 destination.loadFirstTime = loadTreatments
                 destination.docRefs = docRefs
+                destination.medRefs = medRefs
+                destination.meds = meds
                 
             }
         }
