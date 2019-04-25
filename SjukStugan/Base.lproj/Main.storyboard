@@ -95,6 +95,7 @@
                             <constraint firstItem="RuL-jS-bHm" firstAttribute="top" secondItem="UMG-J6-gDk" secondAttribute="bottom" constant="84" id="0bW-Ew-IUV"/>
                             <constraint firstItem="Ixh-O5-9NY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="0gP-mF-OQY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RuL-jS-bHm" secondAttribute="trailing" constant="34" id="0se-wV-iSK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D1N-ga-Snm" secondAttribute="trailing" constant="67.5" id="3of-n8-aWe"/>
                             <constraint firstItem="UMG-J6-gDk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="3tS-at-yEg"/>
                             <constraint firstItem="UMG-J6-gDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4zg-IC-kaE"/>
                             <constraint firstItem="UMG-J6-gDk" firstAttribute="top" secondItem="D1N-ga-Snm" secondAttribute="bottom" constant="1" id="AEc-ua-jSG"/>

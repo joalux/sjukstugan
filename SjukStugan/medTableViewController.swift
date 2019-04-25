@@ -43,7 +43,8 @@ class medTableViewController: UITableViewController {
         db = Firestore.firestore()
         print("is in medicines")
         print (meds)
-       
+        print("medrefs_____________")
+        print(medRefs)
          self.tableView.reloadData()
         
       
@@ -85,6 +86,7 @@ class medTableViewController: UITableViewController {
         
         newMedTextField.text = ""
         medStepper.value = 0
+        countMeds.text = "0"
        self.tableView.reloadData()
         self.addMedPop.removeFromSuperview()
     }
@@ -131,7 +133,7 @@ class medTableViewController: UITableViewController {
         if editingStyle == .delete {
             print("removed")
             print(meds[indexPath.row].name)
-            medRefs.remove(at: indexPath.row)
+            
             db.collection("users").document(username).collection("mediciner").document(medRefs[indexPath.row]).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
